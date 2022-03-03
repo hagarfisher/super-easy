@@ -54,11 +54,12 @@ async function createList(req, res) {
         isSearch: true,
         query: searchTerm
     }
+    let responseProducts;
     try {
         const response = await axios.get(url, {
             params: queryParams
         });
-        const responseProducts = response.data.products;
+        responseProducts = response.data.products;
     } catch (error) {
         console.error(error);
     }
