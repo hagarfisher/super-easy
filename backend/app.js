@@ -1,10 +1,11 @@
 const express = require('express');
 const bodyParser = require("body-parser");
-const db = require("./app/models");
-const controller = require("./app/controllers/user.controller");
+const db = require("./db/models");
+const controller = require("./db/controllers/user.controller");
 const cors = require("cors");
 const axios = require('axios');
 
+const router = express.Router();
 
 const app = express();
 
@@ -31,18 +32,32 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
-app.get("/", (req, res) => {
-    res.json({ message: "Welcome to supereasy application." });
-});
-
+// app.get("/", (req, res) => {
+//     res.json({ message: "Welcome to supereasy application." });
+// });
+app.get("/createEmptyCart",(req, res) => {createEmptyCart(req, res)});
 app.post("/list", (req, res) => { createList(req, res) });
 
-const PORT = 3000;//process.env.PORT || 8080;
+const PORT = 8080;//process.env.PORT || 8080;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}.`);
 });
 
+async function createEmptyCart(req, res) {
+    const url = "https://www.primadonaonline.co.il/v2/retailers/1286/branches/1711/carts";
+    const body = {"lines":[]}
+    try {
+        const response = await axios.post(url, {
+            body
+        });
+        const cartId = response.data.cart.id;
+        res.status(200).json({ cartId });
+   } catch (error) {
+        console.error(error);
+    }
 
+
+}
 async function createList(req, res) {
     //body: [{name:bread,quantity:3,brand:""},....]
     const products = req.body;
