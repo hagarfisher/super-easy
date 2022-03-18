@@ -4,6 +4,7 @@ const db = require("./db/models");
 const controller = require("./db/controllers/user.controller");
 const cors = require("cors");
 const axios = require('axios');
+const cart = require("./controllers/cart");
 
 const router = express.Router();
 
@@ -37,6 +38,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // });
 app.get("/createEmptyCart",(req, res) => {createEmptyCart(req, res)});
 app.post("/list", (req, res) => { createList(req, res) });
+app.post("/cart/add",(req, res) => { cart.addToCart(req, res) });
 
 const PORT = 8080;//process.env.PORT || 8080;
 app.listen(PORT, () => {

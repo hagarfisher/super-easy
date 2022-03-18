@@ -1,0 +1,1325 @@
+[
+    {
+        "supplierId": 95092,
+        "isPrivate": false,
+        "unitResolution": 1,
+        "productTagsData": [
+            {
+                "id": 1680,
+                "isActive": false,
+                "isVisible": false,
+                "isRetailerRelation": false,
+                "isGlobalRelation": true,
+                "isGS1Relation": false,
+                "isExcluded": false,
+                "typeId": 1,
+                "showIconOnProductPageOnly": false
+            }
+        ],
+        "localBarcode": "7290001201602",
+        "isSuggested": false,
+        "lastReview": "2015-07-08T14:15:49.000Z",
+        "id": 5682101,
+        "department": {
+            "id": 46174,
+            "name": "מחלקת מזון"
+        },
+        "barcode": "7290001201602",
+        "isCoupon": false,
+        "image": {
+            "id": 867201,
+            "url": "https://storage.googleapis.com/sp-public/product-images/global/53545/867201/{{size}}.{{extension||'jpg'}}",
+            "source": 2,
+            "isSilent": false,
+            "tag": "MCK_Leon_5.1.2020",
+            "isDefault": true,
+            "typeId": 1,
+            "classification": "Front",
+            "uploadedOn": "2020-01-12T14:15:09.047",
+            "backupPath": "1578838248760/c2a370b66fb691f9dd6bb2ce595402"
+        },
+        "recipes": [
+            {
+                "id": 4042,
+                "name": "קוגלהוף תרד ומלית למאפים",
+                "description": "כמות: 10-12 מנות | כלי: תבנית קוגלהוף בקוטר 24 ס\"מ | כשרות: חלבי | זמן עבודה: 25 דקות | מיומנות: קל | מתכון: רון יוחננוב, צילום: דן פרץ, סטיילינג: נורית קריב",
+                "image": "https://storage.googleapis.com/sp-public/retailers/1286/recipes/1620222351638.jpg",
+                "author": "תנובה",
+                "source": "תנובה",
+                "languageId": 1
+            },
+            {
+                "id": 4046,
+                "name": "עוגת גבינה שמנת ושוקולד",
+                "description": "כמות: 12-16 מנות | כלי: תבנית עגולה קפיצית בקוטר 22 ס\"מ | כשרות: חלבי | זמן עבודה: 20 דקות | מיומנות: בינוני | מתכון: נטלי לוין, צילום: דן פרץ, סטיילינג: נורית קריב",
+                "image": "https://storage.googleapis.com/sp-public/retailers/1286/recipes/1620222949793.jpg",
+                "author": "תנובה",
+                "source": "תנובה",
+                "languageId": 1
+            },
+            {
+                "id": 4047,
+                "name": "חלת הפתעות: חלת כדורים במילוי גבינות ושום",
+                "description": "כמות: חלה אחת | כלי: תבנית תנור | כשרות: חלבי | זמן עבודה: 45 דקות | מיומנות: מורכב | מתכון: אפרת ליכטנשטט, צילום: דן פרץ, סטיילינג: נורית קריב",
+                "image": "https://storage.googleapis.com/sp-public/retailers/1286/recipes/1620223675616.jpg",
+                "author": "תנובה",
+                "source": "תנובה",
+                "languageId": 1
+            },
+            {
+                "id": 4048,
+                "name": "קיש חגיגי של ברוקולי וגאודה",
+                "description": "כמות: 8 מנות | כלי: תבנית פאי בקוטר 24 ס\"מ | כשרות: חלבי | זמן עבודה: 45 דקות | מיומנות: בינוני | מתכון: אפרת ליכטנשטט, צילום: דן פרץ, סטיילינג: נורית קריב",
+                "image": "https://storage.googleapis.com/sp-public/retailers/1286/recipes/1620224819144.jpg",
+                "author": "תנובה",
+                "source": "תנובה",
+                "languageId": 1
+            },
+            {
+                "id": 4048,
+                "name": "קיש חגיגי של ברוקולי וגאודה",
+                "description": "כמות: 8 מנות | כלי: תבנית פאי בקוטר 24 ס\"מ | כשרות: חלבי | זמן עבודה: 45 דקות | מיומנות: בינוני | מתכון: אפרת ליכטנשטט, צילום: דן פרץ, סטיילינג: נורית קריב",
+                "image": "https://storage.googleapis.com/sp-public/retailers/1286/recipes/1620224819144.jpg",
+                "author": "תנובה",
+                "source": "תנובה",
+                "languageId": 1
+            },
+            {
+                "id": 4049,
+                "name": "עוגת רוגלך שמרים במילוי גבינת כנען ואוכמניות",
+                "description": "כמות: 10-12 מנות | כלי: תבנית עגולה בקוטר 24-26 ס\"מ | כשרות: חלבי | זמן עבודה: 30 דקות | מיומנות: בינוני | מתכון: יונית צוקרמן, צילום: דן פרץ, סטיילינג: נורית קריב",
+                "image": "https://storage.googleapis.com/sp-public/retailers/1286/recipes/1620225628051.jpg",
+                "author": "תנובה",
+                "source": "תנובה",
+                "languageId": 1
+            },
+            {
+                "id": 4049,
+                "name": "עוגת רוגלך שמרים במילוי גבינת כנען ואוכמניות",
+                "description": "כמות: 10-12 מנות | כלי: תבנית עגולה בקוטר 24-26 ס\"מ | כשרות: חלבי | זמן עבודה: 30 דקות | מיומנות: בינוני | מתכון: יונית צוקרמן, צילום: דן פרץ, סטיילינג: נורית קריב",
+                "image": "https://storage.googleapis.com/sp-public/retailers/1286/recipes/1620225628051.jpg",
+                "author": "תנובה",
+                "source": "תנובה",
+                "languageId": 1
+            }
+        ],
+        "isOnHomePageCarousel": false,
+        "original": {
+            "isWeighable": false
+        },
+        "productId": 53545,
+        "unitOfMeasure": {
+            "id": 40,
+            "defaultName": "ct",
+            "names": {
+                "1": "יח'",
+                "2": "ct"
+            }
+        },
+        "weight": 18,
+        "retailerId": 1286,
+        "isWeighable": false,
+        "localName": "ביצים L/18 גדול",
+        "activeDays": 4,
+        "names": {
+            "1": {
+                "short": "ביצים L",
+                "long": "ביצים L"
+            },
+            "2": {
+                "short": "Eden Eggs Large 18 P",
+                "long": "Eden Eggs Large 18 P"
+            }
+        },
+        "numberOfItems": 1,
+        "_indexTimestamp": "2022-03-17T12:18:27.261Z",
+        "family": {
+            "id": 22,
+            "retailerId": null,
+            "names": {
+                "1": {
+                    "name": "ביצים טריות"
+                },
+                "2": {
+                    "name": "Fresh Eggs"
+                }
+            },
+            "searchKeywords": [
+                "eggs",
+                "egg",
+                "eggg",
+                "ביצים",
+                "ביצים טריות",
+                "מגש ביצים",
+                "קרטון ביצים",
+                "תבנית ביצים"
+            ],
+            "categoriesPaths": [
+                [
+                    {
+                        "id": 79718,
+                        "names": {
+                            "1": "מוצרי חלב וביצים",
+                            "2": "Dairy  & Eggs",
+                            "4": "Молочное и яйца"
+                        },
+                        "keywords": []
+                    },
+                    {
+                        "id": 79720,
+                        "names": {
+                            "1": "ביצים",
+                            "2": "Eggs",
+                            "4": "Яйца"
+                        },
+                        "keywords": []
+                    },
+                    {
+                        "id": 79730,
+                        "names": {
+                            "1": "ביצים טריות",
+                            "2": "Eggs",
+                            "4": "Яйца"
+                        },
+                        "keywords": []
+                    }
+                ]
+            ],
+            "categories": [
+                {
+                    "id": 79718,
+                    "names": {
+                        "1": "מוצרי חלב וביצים",
+                        "2": "Dairy  & Eggs",
+                        "4": "Молочное и яйца"
+                    },
+                    "keywords": []
+                },
+                {
+                    "id": 79720,
+                    "names": {
+                        "1": "ביצים",
+                        "2": "Eggs",
+                        "4": "Яйца"
+                    },
+                    "keywords": []
+                },
+                {
+                    "id": 79730,
+                    "names": {
+                        "1": "ביצים טריות",
+                        "2": "Eggs",
+                        "4": "Яйца"
+                    },
+                    "keywords": []
+                }
+            ]
+        },
+        "isSubsidy": false,
+        "branch": {
+            "id": 1711,
+            "isForSaleExternal": true,
+            "taxAmount": 0,
+            "regularPrice": 17.9,
+            "isEbtEligible": false,
+            "isEbtCashEligible": false,
+            "isActive": true,
+            "markupPercentage": 0,
+            "isVisible": true,
+            "posLastSellDate": "2022-03-17T11:05:38.000Z",
+            "missingCounter": 0,
+            "branchProductId": 8902939,
+            "sellDateVisibleUntil": "2022-03-21T11:05:38.000Z",
+            "aisleId": 6174,
+            "aisleName": "חלבי וביצים.",
+            "aisleSort": 15
+        }
+    },
+    {
+        "supplierId": 95076,
+        "isPrivate": false,
+        "unitResolution": 1,
+        "localBarcode": "7290006684004",
+        "isSuggested": false,
+        "id": 5679834,
+        "department": {
+            "id": 46174,
+            "name": "מחלקת מזון"
+        },
+        "barcode": "7290006684004",
+        "isCoupon": false,
+        "image": {
+            "id": 575917,
+            "url": "https://storage.googleapis.com/sp-public/items/{{size}}/1337433.{{extension||'jpg'}}?v=1",
+            "source": 1,
+            "isSilent": false,
+            "tag": "ISTOCK RUTI",
+            "isDefault": false,
+            "typeId": 1
+        },
+        "recipes": [
+            {
+                "id": 4042,
+                "name": "קוגלהוף תרד ומלית למאפים",
+                "description": "כמות: 10-12 מנות | כלי: תבנית קוגלהוף בקוטר 24 ס\"מ | כשרות: חלבי | זמן עבודה: 25 דקות | מיומנות: קל | מתכון: רון יוחננוב, צילום: דן פרץ, סטיילינג: נורית קריב",
+                "image": "https://storage.googleapis.com/sp-public/retailers/1286/recipes/1620222351638.jpg",
+                "author": "תנובה",
+                "source": "תנובה",
+                "languageId": 1
+            },
+            {
+                "id": 4046,
+                "name": "עוגת גבינה שמנת ושוקולד",
+                "description": "כמות: 12-16 מנות | כלי: תבנית עגולה קפיצית בקוטר 22 ס\"מ | כשרות: חלבי | זמן עבודה: 20 דקות | מיומנות: בינוני | מתכון: נטלי לוין, צילום: דן פרץ, סטיילינג: נורית קריב",
+                "image": "https://storage.googleapis.com/sp-public/retailers/1286/recipes/1620222949793.jpg",
+                "author": "תנובה",
+                "source": "תנובה",
+                "languageId": 1
+            },
+            {
+                "id": 4047,
+                "name": "חלת הפתעות: חלת כדורים במילוי גבינות ושום",
+                "description": "כמות: חלה אחת | כלי: תבנית תנור | כשרות: חלבי | זמן עבודה: 45 דקות | מיומנות: מורכב | מתכון: אפרת ליכטנשטט, צילום: דן פרץ, סטיילינג: נורית קריב",
+                "image": "https://storage.googleapis.com/sp-public/retailers/1286/recipes/1620223675616.jpg",
+                "author": "תנובה",
+                "source": "תנובה",
+                "languageId": 1
+            },
+            {
+                "id": 4048,
+                "name": "קיש חגיגי של ברוקולי וגאודה",
+                "description": "כמות: 8 מנות | כלי: תבנית פאי בקוטר 24 ס\"מ | כשרות: חלבי | זמן עבודה: 45 דקות | מיומנות: בינוני | מתכון: אפרת ליכטנשטט, צילום: דן פרץ, סטיילינג: נורית קריב",
+                "image": "https://storage.googleapis.com/sp-public/retailers/1286/recipes/1620224819144.jpg",
+                "author": "תנובה",
+                "source": "תנובה",
+                "languageId": 1
+            },
+            {
+                "id": 4048,
+                "name": "קיש חגיגי של ברוקולי וגאודה",
+                "description": "כמות: 8 מנות | כלי: תבנית פאי בקוטר 24 ס\"מ | כשרות: חלבי | זמן עבודה: 45 דקות | מיומנות: בינוני | מתכון: אפרת ליכטנשטט, צילום: דן פרץ, סטיילינג: נורית קריב",
+                "image": "https://storage.googleapis.com/sp-public/retailers/1286/recipes/1620224819144.jpg",
+                "author": "תנובה",
+                "source": "תנובה",
+                "languageId": 1
+            },
+            {
+                "id": 4049,
+                "name": "עוגת רוגלך שמרים במילוי גבינת כנען ואוכמניות",
+                "description": "כמות: 10-12 מנות | כלי: תבנית עגולה בקוטר 24-26 ס\"מ | כשרות: חלבי | זמן עבודה: 30 דקות | מיומנות: בינוני | מתכון: יונית צוקרמן, צילום: דן פרץ, סטיילינג: נורית קריב",
+                "image": "https://storage.googleapis.com/sp-public/retailers/1286/recipes/1620225628051.jpg",
+                "author": "תנובה",
+                "source": "תנובה",
+                "languageId": 1
+            },
+            {
+                "id": 4049,
+                "name": "עוגת רוגלך שמרים במילוי גבינת כנען ואוכמניות",
+                "description": "כמות: 10-12 מנות | כלי: תבנית עגולה בקוטר 24-26 ס\"מ | כשרות: חלבי | זמן עבודה: 30 דקות | מיומנות: בינוני | מתכון: יונית צוקרמן, צילום: דן פרץ, סטיילינג: נורית קריב",
+                "image": "https://storage.googleapis.com/sp-public/retailers/1286/recipes/1620225628051.jpg",
+                "author": "תנובה",
+                "source": "תנובה",
+                "languageId": 1
+            }
+        ],
+        "isOnHomePageCarousel": false,
+        "original": {
+            "isWeighable": false
+        },
+        "productId": 1337433,
+        "unitOfMeasure": {
+            "id": 8,
+            "defaultName": "יחידה",
+            "names": {
+                "1": "יחידה",
+                "2": "Item"
+            }
+        },
+        "weight": 30,
+        "retailerId": 1286,
+        "isWeighable": false,
+        "localName": "ביצי הכפר 30 L",
+        "activeDays": 4,
+        "names": {
+            "1": {
+                "short": "ביצים 30 במגש לארג`",
+                "long": "ביצים 30 במגש לארג`"
+            },
+            "2": {
+                "short": "Eden Shafouk Egg L 30pcs",
+                "long": "Eden Shafouk Egg L 30pcs"
+            }
+        },
+        "numberOfItems": 1,
+        "_indexTimestamp": "2022-03-17T13:36:30.069Z",
+        "family": {
+            "id": 22,
+            "retailerId": null,
+            "names": {
+                "1": {
+                    "name": "ביצים טריות"
+                },
+                "2": {
+                    "name": "Fresh Eggs"
+                }
+            },
+            "searchKeywords": [
+                "eggs",
+                "egg",
+                "eggg",
+                "ביצים",
+                "ביצים טריות",
+                "מגש ביצים",
+                "קרטון ביצים",
+                "תבנית ביצים"
+            ],
+            "categoriesPaths": [
+                [
+                    {
+                        "id": 79718,
+                        "names": {
+                            "1": "מוצרי חלב וביצים",
+                            "2": "Dairy  & Eggs",
+                            "4": "Молочное и яйца"
+                        },
+                        "keywords": []
+                    },
+                    {
+                        "id": 79720,
+                        "names": {
+                            "1": "ביצים",
+                            "2": "Eggs",
+                            "4": "Яйца"
+                        },
+                        "keywords": []
+                    },
+                    {
+                        "id": 79730,
+                        "names": {
+                            "1": "ביצים טריות",
+                            "2": "Eggs",
+                            "4": "Яйца"
+                        },
+                        "keywords": []
+                    }
+                ]
+            ],
+            "categories": [
+                {
+                    "id": 79718,
+                    "names": {
+                        "1": "מוצרי חלב וביצים",
+                        "2": "Dairy  & Eggs",
+                        "4": "Молочное и яйца"
+                    },
+                    "keywords": []
+                },
+                {
+                    "id": 79720,
+                    "names": {
+                        "1": "ביצים",
+                        "2": "Eggs",
+                        "4": "Яйца"
+                    },
+                    "keywords": []
+                },
+                {
+                    "id": 79730,
+                    "names": {
+                        "1": "ביצים טריות",
+                        "2": "Eggs",
+                        "4": "Яйца"
+                    },
+                    "keywords": []
+                }
+            ]
+        },
+        "isSubsidy": false,
+        "branch": {
+            "id": 1711,
+            "isForSaleExternal": true,
+            "taxAmount": 0.17,
+            "regularPrice": 31,
+            "isEbtEligible": false,
+            "isEbtCashEligible": false,
+            "isActive": true,
+            "markupPercentage": 0,
+            "isVisible": true,
+            "posLastSellDate": "2022-03-17T08:17:05.000Z",
+            "missingCounter": 2,
+            "branchProductId": 8900672,
+            "sellDateVisibleUntil": "2022-03-21T08:17:05.000Z",
+            "aisleId": 6174,
+            "aisleName": "חלבי וביצים.",
+            "aisleSort": 15
+        }
+    },
+    {
+        "supplierId": 142756,
+        "isPrivate": false,
+        "unitResolution": 1,
+        "localBarcode": "7290002710004",
+        "isSuggested": false,
+        "lastReview": "2015-08-23T06:30:33.000Z",
+        "id": 10006643,
+        "department": {
+            "id": 46174,
+            "name": "מחלקת מזון"
+        },
+        "barcode": "7290002710004",
+        "brand": {
+            "id": 30809,
+            "names": {
+                "1": "מן הטבע-בארותיים"
+            }
+        },
+        "isCoupon": false,
+        "image": {
+            "id": 1212431,
+            "url": "https://storage.googleapis.com/sp-public/product-images/global/245737/1212431/{{size}}.{{extension||'jpg'}}",
+            "source": 2,
+            "isSilent": false,
+            "tag": "ein_shemer_Leon_16.6.2020",
+            "isDefault": true,
+            "typeId": 1,
+            "classification": "Front",
+            "uploadedOn": "2020-06-28T10:49:07.337",
+            "backupPath": "1593329672468/7b2a326c9ba8ef222fc0b0ff52abc8"
+        },
+        "isOnHomePageCarousel": false,
+        "original": {
+            "isWeighable": true
+        },
+        "productId": 245737,
+        "unitOfMeasure": {
+            "id": 40,
+            "defaultName": "ct",
+            "names": {
+                "1": "יח'",
+                "2": "ct"
+            }
+        },
+        "weight": 12,
+        "retailerId": 1286,
+        "isWeighable": false,
+        "localName": "12ביצים אורגניות מן הטבע M",
+        "activeDays": 40,
+        "names": {
+            "1": {
+                "short": "ביצים אורגניות M",
+                "long": "ביצים אורגניות M"
+            },
+            "2": {
+                "short": "Eden Shafouk Egg Organic  X L 12pcs",
+                "long": "Eden Shafouk Egg Organic  X L 12pcs"
+            }
+        },
+        "numberOfItems": 1,
+        "_indexTimestamp": "2022-03-16T10:04:16.228Z",
+        "family": {
+            "id": 1062,
+            "retailerId": null,
+            "names": {
+                "1": {
+                    "name": "ביצי חופש ואורגניות"
+                },
+                "2": {
+                    "name": "Organic & Free Range"
+                }
+            },
+            "searchKeywords": [
+                "egg",
+                "eggs",
+                "egh",
+                "מגש ביצים",
+                "תבנית ביצים",
+                "ביצה",
+                "ביצים",
+                "ביצי חופש"
+            ],
+            "categoriesPaths": [
+                [
+                    {
+                        "id": 79718,
+                        "names": {
+                            "1": "מוצרי חלב וביצים",
+                            "2": "Dairy  & Eggs",
+                            "4": "Молочное и яйца"
+                        },
+                        "keywords": []
+                    },
+                    {
+                        "id": 79720,
+                        "names": {
+                            "1": "ביצים",
+                            "2": "Eggs",
+                            "4": "Яйца"
+                        },
+                        "keywords": []
+                    },
+                    {
+                        "id": 79730,
+                        "names": {
+                            "1": "ביצים טריות",
+                            "2": "Eggs",
+                            "4": "Яйца"
+                        },
+                        "keywords": []
+                    }
+                ],
+                [
+                    {
+                        "id": 79835,
+                        "names": {
+                            "1": "בריאות ותזונה",
+                            "2": "Health & Specialty Diets"
+                        },
+                        "keywords": []
+                    },
+                    {
+                        "id": 94589,
+                        "names": {
+                            "1": "תזונה מיוחדת",
+                            "2": "Special Diets",
+                            "4": "Специализированное питание"
+                        },
+                        "keywords": []
+                    },
+                    {
+                        "id": 94591,
+                        "names": {
+                            "1": "אורגני",
+                            "2": "Organic",
+                            "4": "Органическая продукция"
+                        },
+                        "keywords": []
+                    }
+                ]
+            ],
+            "categories": [
+                {
+                    "id": 79718,
+                    "names": {
+                        "1": "מוצרי חלב וביצים",
+                        "2": "Dairy  & Eggs",
+                        "4": "Молочное и яйца"
+                    },
+                    "keywords": []
+                },
+                {
+                    "id": 79720,
+                    "names": {
+                        "1": "ביצים",
+                        "2": "Eggs",
+                        "4": "Яйца"
+                    },
+                    "keywords": []
+                },
+                {
+                    "id": 79730,
+                    "names": {
+                        "1": "ביצים טריות",
+                        "2": "Eggs",
+                        "4": "Яйца"
+                    },
+                    "keywords": []
+                }
+            ]
+        },
+        "isSubsidy": false,
+        "weightUnit": {
+            "id": 1,
+            "names": {
+                "1": "ק\"ג",
+                "2": "kg",
+                "3": "kg",
+                "4": "кг.",
+                "5": "kg"
+            }
+        },
+        "branch": {
+            "id": 1711,
+            "isForSaleExternal": true,
+            "taxAmount": 0.17,
+            "regularPrice": 22.9,
+            "isEbtEligible": false,
+            "isEbtCashEligible": false,
+            "isActive": true,
+            "markupPercentage": 0,
+            "isVisible": true,
+            "posLastSellDate": "2022-03-16T09:56:02.000Z",
+            "missingCounter": 0,
+            "branchProductId": 17283851,
+            "sellDateVisibleUntil": "2022-04-25T09:56:02.000Z",
+            "aisleId": 6174,
+            "aisleName": "חלבי וביצים.",
+            "aisleSort": 15,
+            "specials": [
+                {
+                    "id": 2971733,
+                    "description": "קנו ביצים טריות ב-₪19.90",
+                    "startDate": "2022-02-02T00:00:00.000Z",
+                    "endDate": "2022-03-31T23:59:59.000Z",
+                    "isCoupon": false,
+                    "limit": 0,
+                    "hasOneProduct": false,
+                    "firstLevel": {
+                        "type": 2,
+                        "firstPurchaseTotal": 1,
+                        "firstGift": {
+                            "total": 19.9
+                        }
+                    },
+                    "names": {
+                        "1": {
+                            "id": 1375220,
+                            "name": "קנו ביצים טריות ב-₪19.90",
+                            "promotionTag": "במבצע!"
+                        },
+                        "2": {
+                            "id": 1785499,
+                            "name": "Buy Eggs for ₪19.90",
+                            "promotionTag": "On sale!"
+                        },
+                        "3": {
+                            "id": 1785500,
+                            "name": "Compra Eggs por ₪19.90",
+                            "promotionTag": "En venta!"
+                        },
+                        "4": {
+                            "id": 1785501,
+                            "name": "Купить Яйца за ₪19.90",
+                            "promotionTag": "Со скидкой!"
+                        },
+                        "5": {
+                            "id": 1785502,
+                            "name": "Achetez Oeufs frais unités pour ₪19.90",
+                            "promotionTag": "En solde!"
+                        },
+                        "6": {
+                            "id": 1785503,
+                            "name": "اشتري بيض مقابل ₪19.90",
+                            "promotionTag": "في الخصم!"
+                        }
+                    }
+                }
+            ],
+            "salePrice": 19.9,
+            "isCalculatedBySalePrice": false
+        }
+    },
+    {
+        "supplierId": 95063,
+        "isPrivate": false,
+        "unitResolution": 1,
+        "productTagsData": [
+            {
+                "id": 2562,
+                "isActive": true,
+                "isVisible": true,
+                "isRetailerRelation": true,
+                "isGlobalRelation": false,
+                "isGS1Relation": false,
+                "isExcluded": false,
+                "typeId": 2,
+                "showIconOnProductPageOnly": false
+            },
+            {
+                "id": 1680,
+                "isActive": false,
+                "isVisible": false,
+                "isRetailerRelation": false,
+                "isGlobalRelation": true,
+                "isGS1Relation": false,
+                "isExcluded": false,
+                "typeId": 1,
+                "showIconOnProductPageOnly": false
+            },
+            {
+                "id": 4243,
+                "isActive": true,
+                "isVisible": true,
+                "isRetailerRelation": false,
+                "isGlobalRelation": true,
+                "isGS1Relation": false,
+                "isExcluded": false,
+                "typeId": 1,
+                "showIconOnProductPageOnly": false
+            }
+        ],
+        "localBarcode": "7290000042442",
+        "isSuggested": false,
+        "lastReview": "2017-01-05T07:43:40.000Z",
+        "id": 5678705,
+        "department": {
+            "id": 46181,
+            "name": "מחלקת חלב"
+        },
+        "barcode": "7290000042442",
+        "brand": {
+            "id": 1605,
+            "names": {
+                "1": "תנובה",
+                "2": "Tnuva"
+            }
+        },
+        "isCoupon": false,
+        "image": {
+            "id": 972127,
+            "url": "https://storage.googleapis.com/sp-public/product-images/global/11018/972127/{{size}}.{{extension||'jpg'}}",
+            "source": 3,
+            "isSilent": false,
+            "tag": "outsourced/suppliers 10/5/2020",
+            "isDefault": true,
+            "typeId": 1,
+            "uploadedOn": "2020-05-10T13:52:22.870",
+            "backupPath": "1589116745007/dd67eb7bb4df18ebba28d530c70b82"
+        },
+        "recipes": [
+            {
+                "id": 4048,
+                "name": "קיש חגיגי של ברוקולי וגאודה",
+                "description": "כמות: 8 מנות | כלי: תבנית פאי בקוטר 24 ס\"מ | כשרות: חלבי | זמן עבודה: 45 דקות | מיומנות: בינוני | מתכון: אפרת ליכטנשטט, צילום: דן פרץ, סטיילינג: נורית קריב",
+                "image": "https://storage.googleapis.com/sp-public/retailers/1286/recipes/1620224819144.jpg",
+                "author": "תנובה",
+                "source": "תנובה",
+                "languageId": 1
+            },
+            {
+                "id": 4049,
+                "name": "עוגת רוגלך שמרים במילוי גבינת כנען ואוכמניות",
+                "description": "כמות: 10-12 מנות | כלי: תבנית עגולה בקוטר 24-26 ס\"מ | כשרות: חלבי | זמן עבודה: 30 דקות | מיומנות: בינוני | מתכון: יונית צוקרמן, צילום: דן פרץ, סטיילינג: נורית קריב",
+                "image": "https://storage.googleapis.com/sp-public/retailers/1286/recipes/1620225628051.jpg",
+                "author": "תנובה",
+                "source": "תנובה",
+                "languageId": 1
+            }
+        ],
+        "isOnHomePageCarousel": false,
+        "original": {
+            "isWeighable": false
+        },
+        "productId": 11018,
+        "unitOfMeasure": {
+            "id": 6,
+            "defaultName": "ליטר",
+            "names": {
+                "1": "ליטר",
+                "2": "Liter"
+            }
+        },
+        "productTagsById": {
+            "2562": {
+                "id": 2562,
+                "sort": 415,
+                "typeId": 2
+            }
+        },
+        "tagById": {
+            "2562": {
+                "sort": 415,
+                "typeId": 2
+            }
+        },
+        "weight": 1,
+        "retailerId": 1286,
+        "tags": [
+            2562
+        ],
+        "isWeighable": false,
+        "localName": "חלב הומוגני 3% בקרטון 1ל' תנובה",
+        "activeDays": 5,
+        "names": {
+            "1": {
+                "short": "חלב 3% קרטון - בפיקוח",
+                "long": "חלב 3% קרטון - מחיר בפיקוח ממשלתי"
+            },
+            "2": {
+                "short": "חלב קרטון 3אחוז  תנו",
+                "long": "חלב קרטון 3אחוז  תנובה 1 ל"
+            }
+        },
+        "numberOfItems": 1,
+        "promotionBanners": [
+            {
+                "id": 1509,
+                "name": "מגשי פירות",
+                "url": "https://www.primadonaonline.co.il/?catalogProduct=4751239",
+                "pictureUrl": "https://storage.googleapis.com/sp-public/bumper-promotion-banner-images/1643724678930-0.39928180314254735.png",
+                "mobilePictureUrl": "https://storage.googleapis.com/sp-public/bumper-promotion-banner-images/1643724676057-0.14363049104787762.jpg",
+                "retailerId": 1286
+            }
+        ],
+        "_indexTimestamp": "2022-03-17T15:19:15.548Z",
+        "family": {
+            "id": 801,
+            "retailerId": null,
+            "names": {
+                "1": {
+                    "name": "חלב בקרטון, בקבוק"
+                },
+                "2": {
+                    "name": "Milk Bottles"
+                }
+            },
+            "searchKeywords": [
+                "חלב",
+                "חלב טרי",
+                "חלב קרטון",
+                "חלב בקרטון",
+                "חלב בקבוק",
+                "חלב בבקבוק"
+            ],
+            "categoriesPaths": [
+                [
+                    {
+                        "id": 79718,
+                        "names": {
+                            "1": "מוצרי חלב וביצים",
+                            "2": "Dairy  & Eggs",
+                            "4": "Молочное и яйца"
+                        },
+                        "keywords": []
+                    },
+                    {
+                        "id": 95010,
+                        "names": {
+                            "1": "חלב ומשקאות חלב",
+                            "2": "Milk & Cream",
+                            "4": "Молоко и сливки"
+                        },
+                        "keywords": []
+                    },
+                    {
+                        "id": 79723,
+                        "names": {
+                            "1": "חלב",
+                            "2": "Milk",
+                            "4": "Свежее молоко"
+                        },
+                        "keywords": []
+                    }
+                ]
+            ],
+            "categories": [
+                {
+                    "id": 79718,
+                    "names": {
+                        "1": "מוצרי חלב וביצים",
+                        "2": "Dairy  & Eggs",
+                        "4": "Молочное и яйца"
+                    },
+                    "keywords": []
+                },
+                {
+                    "id": 95010,
+                    "names": {
+                        "1": "חלב ומשקאות חלב",
+                        "2": "Milk & Cream",
+                        "4": "Молоко и сливки"
+                    },
+                    "keywords": []
+                },
+                {
+                    "id": 79723,
+                    "names": {
+                        "1": "חלב",
+                        "2": "Milk",
+                        "4": "Свежее молоко"
+                    },
+                    "keywords": []
+                }
+            ]
+        },
+        "isSubsidy": false,
+        "productTags": [
+            2562
+        ],
+        "branch": {
+            "id": 1711,
+            "isForSaleExternal": true,
+            "taxAmount": 0.17,
+            "regularPrice": 5.94,
+            "isEbtEligible": false,
+            "isEbtCashEligible": false,
+            "isActive": true,
+            "markupPercentage": 0,
+            "isVisible": true,
+            "posLastSellDate": "2022-03-17T14:53:37.000Z",
+            "missingCounter": 0,
+            "branchProductId": 8899543,
+            "sellDateVisibleUntil": "2022-03-22T14:53:37.000Z",
+            "aisleId": 6174,
+            "aisleName": "חלבי וביצים.",
+            "aisleSort": 15
+        }
+    },
+    {
+        "supplierId": 95074,
+        "isPrivate": false,
+        "unitResolution": 1,
+        "localBarcode": "7290013185006",
+        "isSuggested": false,
+        "lastReview": "2015-08-19T12:43:31.000Z",
+        "id": 5691011,
+        "department": {
+            "id": 46180,
+            "name": "לחמים ומאפ"
+        },
+        "barcode": "7290013185006",
+        "isCoupon": false,
+        "image": {
+            "id": 261422,
+            "url": "https://storage.googleapis.com/sp-public/items/{{size}}/153097.{{extension||'jpg'}}?v=5",
+            "source": 2,
+            "isSilent": false,
+            "tag": "shorocky/2015-05-13 Leon 1",
+            "isDefault": false,
+            "typeId": 1
+        },
+        "isOnHomePageCarousel": false,
+        "original": {
+            "isWeighable": false
+        },
+        "productId": 153097,
+        "retailerId": 1286,
+        "isWeighable": false,
+        "localName": "לחם בריאות",
+        "activeDays": 14,
+        "names": {
+            "1": {
+                "short": "לחם בריאות",
+                "long": "לחם בריאות"
+            }
+        },
+        "numberOfItems": 1,
+        "promotionBanners": [
+            {
+                "id": 1538,
+                "name": "אפייה במקום",
+                "url": "/tags/2597/products",
+                "pictureUrl": "https://storage.googleapis.com/sp-public/bumper-promotion-banner-images/1601977793998-0.7709359050400819.png",
+                "mobilePictureUrl": "https://storage.googleapis.com/sp-public/bumper-promotion-banner-images/1601977790536-0.9470971082005519.png",
+                "retailerId": 1286
+            }
+        ],
+        "_indexTimestamp": "2022-03-17T15:19:16.322Z",
+        "family": {
+            "id": 396,
+            "retailerId": null,
+            "names": {
+                "1": {
+                    "name": "לחם חיטה מלאה"
+                },
+                "2": {
+                    "name": "Whole Grain & Brown Bread"
+                },
+                "4": {
+                    "name": "Хлеб из цельной пшеницы"
+                }
+            },
+            "searchKeywords": [],
+            "categoriesPaths": [
+                [
+                    {
+                        "id": 79687,
+                        "names": {
+                            "1": "לחמים עוגות ועוגיות",
+                            "2": "Bakery",
+                            "4": "Пекарня"
+                        },
+                        "keywords": []
+                    },
+                    {
+                        "id": 79689,
+                        "names": {
+                            "1": "לחם",
+                            "2": "Bread",
+                            "4": "Хлеб"
+                        },
+                        "keywords": []
+                    },
+                    {
+                        "id": 79698,
+                        "names": {
+                            "1": "לחם",
+                            "2": "Bread",
+                            "4": "Хлеб"
+                        },
+                        "keywords": []
+                    }
+                ]
+            ],
+            "categories": [
+                {
+                    "id": 79687,
+                    "names": {
+                        "1": "לחמים עוגות ועוגיות",
+                        "2": "Bakery",
+                        "4": "Пекарня"
+                    },
+                    "keywords": []
+                },
+                {
+                    "id": 79689,
+                    "names": {
+                        "1": "לחם",
+                        "2": "Bread",
+                        "4": "Хлеб"
+                    },
+                    "keywords": []
+                },
+                {
+                    "id": 79698,
+                    "names": {
+                        "1": "לחם",
+                        "2": "Bread",
+                        "4": "Хлеб"
+                    },
+                    "keywords": []
+                }
+            ]
+        },
+        "isSubsidy": false,
+        "branch": {
+            "id": 1711,
+            "isForSaleExternal": true,
+            "taxAmount": 0.17,
+            "regularPrice": 12.9,
+            "isEbtEligible": false,
+            "isEbtCashEligible": false,
+            "isActive": true,
+            "markupPercentage": 0,
+            "isVisible": true,
+            "posLastSellDate": "2022-03-17T14:31:13.000Z",
+            "missingCounter": 0,
+            "branchProductId": 8917093,
+            "sellDateVisibleUntil": "2022-03-31T14:31:13.000Z",
+            "aisleId": 6181,
+            "aisleName": "לחם ולחמניות,פריכיות ופתית . עוגות הבית. ביסקוויטים.",
+            "aisleSort": 7
+        }
+    },
+    {
+        "supplierId": 95063,
+        "isPrivate": false,
+        "unitResolution": 1,
+        "productTagsData": [
+            {
+                "id": 2562,
+                "isActive": true,
+                "isVisible": true,
+                "isRetailerRelation": true,
+                "isGlobalRelation": false,
+                "isGS1Relation": false,
+                "isExcluded": false,
+                "typeId": 2,
+                "showIconOnProductPageOnly": false
+            }
+        ],
+        "localBarcode": "7290004132903",
+        "isSuggested": false,
+        "lastReview": "2015-05-13T07:17:32.000Z",
+        "id": 6281871,
+        "department": {
+            "id": 46181,
+            "name": "מחלקת חלב"
+        },
+        "barcode": "7290004132903",
+        "brand": {
+            "id": 1605,
+            "names": {
+                "1": "תנובה",
+                "2": "Tnuva"
+            }
+        },
+        "isCoupon": false,
+        "image": {
+            "id": 973185,
+            "url": "https://storage.googleapis.com/sp-public/product-images/global/46748/973185/{{size}}.{{extension||'jpg'}}",
+            "source": 3,
+            "isSilent": false,
+            "tag": "outsourced/suppliers 10/5/2020",
+            "isDefault": true,
+            "typeId": 1,
+            "uploadedOn": "2020-05-10T21:52:59.330",
+            "backupPath": "1589116745007/43c56225180408b274afb9df5c5adf"
+        },
+        "isOnHomePageCarousel": false,
+        "original": {
+            "isWeighable": false
+        },
+        "productId": 46748,
+        "unitOfMeasure": {
+            "id": 2,
+            "defaultName": "גרם",
+            "names": {
+                "1": "גרם",
+                "2": "gram"
+            }
+        },
+        "productTagsById": {
+            "2562": {
+                "id": 2562,
+                "sort": 323,
+                "typeId": 2
+            }
+        },
+        "tagById": {
+            "2562": {
+                "sort": 323,
+                "typeId": 2
+            }
+        },
+        "weight": 250,
+        "retailerId": 1286,
+        "tags": [
+            2562
+        ],
+        "isWeighable": false,
+        "localName": "גבינה 3% בד\"צ תנובה",
+        "activeDays": 20,
+        "names": {
+            "1": {
+                "short": "גבינה לבנה 3%",
+                "long": "גבינה לבנה 3%"
+            },
+            "2": {
+                "short": "Tnuva Spread Cream Cheese 3% 250 g",
+                "long": "Tnuva Spread Cream Cheese 3% 250 g"
+            }
+        },
+        "numberOfItems": 1,
+        "promotionBanners": [
+            {
+                "id": 1145,
+                "name": "מעדניות באנר",
+                "url": "/tags/2403/products",
+                "pictureUrl": "https://storage.googleapis.com/sp-public/bumper-promotion-banner-images/1594814742987-0.7250523201328054.png",
+                "mobilePictureUrl": "https://storage.googleapis.com/sp-public/bumper-promotion-banner-images/1594814746293-0.7580567138802747.png",
+                "retailerId": 1286
+            },
+            {
+                "id": 1509,
+                "name": "מגשי פירות",
+                "url": "https://www.primadonaonline.co.il/?catalogProduct=4751239",
+                "pictureUrl": "https://storage.googleapis.com/sp-public/bumper-promotion-banner-images/1643724678930-0.39928180314254735.png",
+                "mobilePictureUrl": "https://storage.googleapis.com/sp-public/bumper-promotion-banner-images/1643724676057-0.14363049104787762.jpg",
+                "retailerId": 1286
+            },
+            {
+                "id": 1510,
+                "name": "קצביה",
+                "url": "/tags/2588/products",
+                "pictureUrl": "https://storage.googleapis.com/sp-public/bumper-promotion-banner-images/1643063405370-0.0469065580550585.png",
+                "mobilePictureUrl": "https://storage.googleapis.com/sp-public/bumper-promotion-banner-images/1643063397295-0.6095355413108712.png",
+                "retailerId": 1286
+            }
+        ],
+        "_indexTimestamp": "2022-03-15T16:04:15.374Z",
+        "family": {
+            "id": 37,
+            "retailerId": null,
+            "names": {
+                "1": {
+                    "name": "גבינה לבנה"
+                },
+                "2": {
+                    "name": "White Cheese"
+                },
+                "4": {
+                    "name": "Крем-сыр"
+                }
+            },
+            "searchKeywords": [
+                "גבינה לבנה",
+                "גבינה לבנה 5%",
+                "גבינה",
+                "גבינה 5%",
+                "גבינה 9%"
+            ],
+            "categoriesPaths": [
+                [
+                    {
+                        "id": 79718,
+                        "names": {
+                            "1": "מוצרי חלב וביצים",
+                            "2": "Dairy  & Eggs",
+                            "4": "Молочное и яйца"
+                        },
+                        "keywords": []
+                    },
+                    {
+                        "id": 95012,
+                        "names": {
+                            "1": "גבינות וחמאה",
+                            "2": "Cheese & Butter",
+                            "4": "Сыр и масло"
+                        },
+                        "keywords": []
+                    },
+                    {
+                        "id": 95032,
+                        "names": {
+                            "1": "גבינות לבנות רכות וקוטג'",
+                            "2": "Cottage & White Cheese",
+                            "4": "Мягкие сыры и котедж"
+                        },
+                        "keywords": []
+                    }
+                ]
+            ],
+            "categories": [
+                {
+                    "id": 79718,
+                    "names": {
+                        "1": "מוצרי חלב וביצים",
+                        "2": "Dairy  & Eggs",
+                        "4": "Молочное и яйца"
+                    },
+                    "keywords": []
+                },
+                {
+                    "id": 95012,
+                    "names": {
+                        "1": "גבינות וחמאה",
+                        "2": "Cheese & Butter",
+                        "4": "Сыр и масло"
+                    },
+                    "keywords": []
+                },
+                {
+                    "id": 95032,
+                    "names": {
+                        "1": "גבינות לבנות רכות וקוטג'",
+                        "2": "Cottage & White Cheese",
+                        "4": "Мягкие сыры и котедж"
+                    },
+                    "keywords": []
+                }
+            ]
+        },
+        "isSubsidy": false,
+        "productTags": [
+            2562
+        ],
+        "branch": {
+            "id": 1711,
+            "isForSaleExternal": true,
+            "taxAmount": 0.17,
+            "regularPrice": 4.9,
+            "isEbtEligible": false,
+            "isEbtCashEligible": false,
+            "isActive": true,
+            "markupPercentage": 0,
+            "isVisible": true,
+            "posLastSellDate": "2022-03-15T12:42:08.000Z",
+            "missingCounter": 0,
+            "branchProductId": 9943453,
+            "sellDateVisibleUntil": "2022-04-04T12:42:08.000Z",
+            "aisleId": 6174,
+            "aisleName": "חלבי וביצים.",
+            "aisleSort": 15
+        }
+    }
+]
