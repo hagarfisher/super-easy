@@ -13,8 +13,7 @@
   ],
   "content_scripts": [ {
     "matches": ["https://*.primadonaonline.co.il/*"],
-    "js": ["content-script_primadona.js"],
-    "run_at": "document_start"
+    "js": ["content-script_primadona.js"]
   },
   {
     "matches": ["http://*.localhost:3000/*"],
