@@ -1,4 +1,4 @@
-document.getElementById('saveCart').addEventListener('click', () => {
+document.getElementById('createCart').addEventListener('click', () => {
     const cartId = localStorage.getItem('cartId');
     console.log(cartId);
     chrome.storage.sync.set({ 'cartId': cartId }, function () {
