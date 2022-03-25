@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
-// import { EmptyCart } from "../types/EmptyCart";
-
+// import { EmptyCart } from "../types/EmptyCart";i
+import { extensionId } from "../utils/constants";
 export default function CartButton() {
   // const [cartId, setCartId] = useState("");
 
@@ -13,6 +13,12 @@ export default function CartButton() {
       const cartId = response.data.cartId;
       // setCartId(cartId);
       localStorage.setItem("cartId", cartId);
+      window.chrome.runtime.sendMessage(extensionId, { cartId },
+        function (response) {
+          if (!response.success) {
+            console.error(url);
+          }
+        });
     } catch (error) {
       console.error(error);
     }
