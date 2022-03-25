@@ -6,17 +6,32 @@
   "background": {
     "service_worker": "background.js"
   },
+  "externally_connectable": {
+    "matches": [
+      "http://localhost:3000/*"
+    ]
+  },
   "permissions": [
     "storage",
     "activeTab",
     "scripting"
   ],
-  "content_scripts": [ {
-    "matches": ["https://*.primadonaonline.co.il/*"],
-    "js": ["content-script_primadona.js"]
-  },
-  {
-    "matches": ["http://*.localhost:3000/*"],
-    "js": ["content-script_supereasy.js"]
-  } ]
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.primadonaonline.co.il/*"
+      ],
+      "js": [
+        "content-script_primadona.js"
+      ]
+    },
+    {
+      "matches": [
+        "http://*.localhost:3000/*"
+      ],
+      "js": [
+        "content-script_supereasy.js"
+      ]
+    }
+  ]
 }
