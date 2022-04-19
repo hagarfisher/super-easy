@@ -1,5 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { Form, Col, Row, FormControl, Button, InputGroup } from 'react-bootstrap';
+
 
 // interface Props {
 //   cartId: string;
@@ -20,10 +22,39 @@ export default function ShoppingListInput() {
   }
   return (
     <div>
-      <input onChange={(e) => setProductName(e.target.value)} type="text" id="productName" placeholder="Enter product name" />
-      <input onChange={(e) => setQuantity(+e.target.value)} type="number" id="productQuantity" placeholder="Enter product quantity" />
-      <button onClick={() => addProduct()} id="addProduct">Add product</button>
-      <button onClick={() => addToCart()}>Add to cart</button>
+      <Row className="mb-3">
+        <Col>
+          <InputGroup id="productName" onChange={(e) => setProductName(e.target.value)} className="mb-3">
+            <FormControl
+              placeholder="Enter product name"
+              aria-label="Enter product name"
+              aria-describedby="Enter product name"
+            />
+          </InputGroup>
+        </Col>
+        <Col>
+          <InputGroup id="productQuantity" onChange={(e) => setQuantity(+e.target.value)} className="mb-3">
+            <FormControl
+              placeholder="Enter product name"
+              aria-label="Enter product name"
+              aria-describedby="Enter product name"
+            />
+          </InputGroup>
+        </Col>
+        <Col>
+          <Button onClick={() => addProduct()} id="addProduct">Add product</Button>
+        </Col>
+      </Row>
+      <Row>
+        <Button onClick={() => addToCart()}>Add to cart</Button>
+      </Row>
+
+      {/* <input onChange={(e) => setProductName(e.target.value)} type="text" id="productName" placeholder="Enter product name" />
+      <input onChange={(e) => setQuantity(+e.target.value)} type="number" id="productQuantity" placeholder="Enter product quantity" /> */}
+
+      <div>
+        <a href="https://www.primadonaonline.co.il/cart/summary" rel="noreferrer" target="_blank">Go to Primadona</a>
+      </div>
     </div>
   )
 }
