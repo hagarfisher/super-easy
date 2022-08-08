@@ -297,7 +297,7 @@ export interface SupplierProduct {
         "externalId": number
     },
     "barcode": string,
-    "brand": {
+    "brand"?: {
         "id": number,
         "names": {
             "1": string,
