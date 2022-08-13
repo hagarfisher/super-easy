@@ -26,9 +26,12 @@ const importPrimadonaData = async () => {
         await bluebird.each(products, (async (product: SupplierProduct) => {
             await prisma.product.create({
                 data: {
+                    productId: product.id,
                     name: product.localName,
                     brand: product.brand?.names[1] ?? 'unknown',
                     price: product.branch.regularPrice,
+                    salePrice: product.branch.salePrice,
+                    isWeighable: product.isWeighable,
                 },
             });
             console.log(product.localName);

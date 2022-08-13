@@ -2,6 +2,11 @@ const data = require("../mockData.json");
 import axios from 'axios';
 import { Request, Response } from 'express';
 import { SupplierProduct } from '../types/product';
+import { PrismaClient } from '@prisma/client';
+import bluebird from 'bluebird';
+
+
+const prisma = new PrismaClient();
 
 interface Product {
     name: string;
@@ -12,13 +17,17 @@ export default {
     addToCart: async function addToCart(req: Request<void, void, { cartId: string; products: Product[] }>, res: Response) {
         const { cartId, products } = req.body;
         const cart: { lines: { quantity: number; retailerProductId: number }[] } = { lines: [] };
-        products.forEach(product => {
-            const { quantity, name } = product;
-            const mockData = data as SupplierProduct[];
-            const productIndex = mockData.findIndex(item => item.names[1].short.includes(name));
-            const productId = mockData[productIndex].id;
-            cart.lines.push({ quantity: quantity, retailerProductId: productId });
-        })
+
+        await bluebird.each(products, (async (product: Product) => {
+            const lowestPriceProduct = await getLowestPricedProduct(product);
+            let quantity = product.quantity;
+            if (lowestPriceProduct && lowestPriceProduct.productId != 0) {
+                if (!lowestPriceProduct.isWeighable) {
+                    quantity = Math.floor(product.quantity);
+                }
+                cart.lines.push({ quantity, retailerProductId: lowestPriceProduct.productId });
+            }
+        }));
         const url = `https://www.primadonaonline.co.il/v2/retailers/1286/branches/1711/carts/${cartId}`;
         try {
             const response = await axios.patch(url, cart, {});
@@ -42,4 +51,24 @@ export default {
 
 
     }
+}
+
+async function getLowestPricedProduct(product: Product) {
+
+    const products = await prisma.product.findFirst({
+        where: {
+            name: {
+                startsWith: product.name
+            },
+            NOT: {
+                productId: 0
+            }
+        },
+        orderBy: {
+            price: "asc"
+        }
+
+    });
+    console.log(products);
+    return products;
 }

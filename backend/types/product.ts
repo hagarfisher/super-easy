@@ -359,7 +359,7 @@ export interface SupplierProduct {
     "tags": [
         number
     ],
-    "isWeighable": false,
+    "isWeighable": boolean,
     "localName": string,
     "activeDays": number,
     "names": {
@@ -545,5 +545,6 @@ export interface SupplierProduct {
                 }
             }
         ]
+        "salePrice"?: number | null,
     }
 }

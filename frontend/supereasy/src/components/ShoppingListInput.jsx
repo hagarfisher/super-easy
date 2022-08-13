@@ -33,9 +33,10 @@ export default function ShoppingListInput() {
           </InputGroup>
         </Col>
         <Col>
-          <InputGroup id="productQuantity" onChange={(e) => setQuantity(+e.target.value)} className="mb-3">
+          <InputGroup id="productQuantity" onChange={(e) => setQuantity(e.target.value)} className="mb-3">
             <FormControl
               type="number"
+              step="0.1"
               placeholder="Enter product quantity"
               aria-label="Enter product quantity"
               aria-describedby="Enter product quantity"

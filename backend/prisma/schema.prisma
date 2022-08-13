@@ -11,10 +11,13 @@ datasource db {
 }
 
 model Product {
-    id        Int      @id @default(autoincrement())
-    name      String
-    brand     String
-    price     Float
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
+  id          Int      @id @default(autoincrement())
+  productId   Int      @default(0)
+  name        String
+  brand       String
+  price       Float
+  salePrice   Float?
+  isWeighable Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
