@@ -2,6 +2,7 @@ import axios from 'axios';
 import { PrismaClient } from '@prisma/client';
 import bluebird from 'bluebird';
 import { SupplierProduct } from '../types/product';
+import { sleep } from '../utils/helpers';
 
 const prisma = new PrismaClient();
 
@@ -24,18 +25,14 @@ const importPrimadonaData = async () => {
         const { products } = data;
         ({ total } = data);
         await bluebird.each(products, (async (product: SupplierProduct) => {
-            await prisma.product.create({
+            await prisma.rawData.create({
                 data: {
-                    productId: product.id,
-                    name: product.localName,
-                    brand: product.brand?.names[1] ?? 'unknown',
-                    price: product.branch.regularPrice,
-                    salePrice: product.branch.salePrice,
-                    isWeighable: product.isWeighable,
+                    value: JSON.stringify(product),
                 },
             });
             console.log(product.localName);
         }));
+        await sleep(1000);
     } while (total > index + 100);
 }
 

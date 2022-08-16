@@ -332,7 +332,7 @@ export interface SupplierProduct {
         "nutritionFacts": null
     },
     "productId": number,
-    "unitOfMeasure": {
+    "unitOfMeasure"?: {
         "id": number,
         "defaultName": string,
         "names": {

@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Form, Col, Row, FormControl, Button, InputGroup } from 'react-bootstrap';
+import { Form, Badge, ListGroup, Col, Row, FormControl, Button, InputGroup } from 'react-bootstrap';
 
 
 // interface Props {
@@ -47,6 +47,19 @@ export default function ShoppingListInput() {
           <Button onClick={() => addProduct()} id="addProduct">Add product</Button>
         </Col>
       </Row>
+      <ListGroup variant="flush" >
+        {products.map((prodcut, index) => (
+          <ListGroup.Item as="li" className="d-flex justify-content-between align-items-start">
+            <div className="ms-2 me-auto">
+              <Badge bg="primary" pill>
+              {prodcut.quantity}
+              </Badge>
+            </div>
+            {prodcut.name}
+          </ListGroup.Item>
+        ))}
+      </ListGroup>
+
       <Row>
         <Button onClick={() => addToCart()}>Add to cart</Button>
       </Row>

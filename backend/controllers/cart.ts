@@ -64,9 +64,12 @@ async function getLowestPricedProduct(product: Product) {
                 productId: 0
             }
         },
-        orderBy: {
+        orderBy: [{
             price: "asc"
-        }
+        },
+        {
+            salePrice: "asc"
+        }]
 
     });
     console.log(products);
