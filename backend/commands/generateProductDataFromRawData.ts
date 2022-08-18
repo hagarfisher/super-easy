@@ -39,7 +39,7 @@ export async function generateProductData() {
             lowestPrice = parsedProduct.branch.regularPrice;
         }
 
-        if (weightUnit === 'Kilogram' || weightUnit === 'Liter') {
+        if (weightUnit === 'Kilogram' || weightUnit === 'Liter' || (parsedProduct.isWeighable === true && weightUnit === 'unknown')) {
             convertedWeight = totalWeight * WeightConversion.kg;
         }
         else if (weightUnit === 'Oz' || weightUnit === 'fl oz') {
@@ -60,7 +60,7 @@ export async function generateProductData() {
         await prisma.product.create({
             data: {
                 productId: parsedProduct.id,
-                name: parsedProduct.localName,
+                name: parsedProduct.names[1].short,
                 brand: parsedProduct.brand?.names[1] ?? 'unknown',
                 price: parsedProduct.branch.regularPrice,
                 salePrice: parsedProduct.branch.salePrice,
