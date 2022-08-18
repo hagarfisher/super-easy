@@ -65,12 +65,8 @@ async function getLowestPricedProduct(product: Product) {
             }
         },
         orderBy: [{
-            price: "asc"
-        },
-        {
-            salePrice: "asc"
+            pricePerUnit: "asc"
         }]
-
     });
     console.log(products);
     return products;

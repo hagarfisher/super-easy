@@ -16,6 +16,7 @@ model Product {
   salePrice       Float?
   isWeighable     Boolean        @default(false)
   UnitOfMesaure   UnitOfMesaure? @relation(fields: [unitOfMesaureId], references: [id])
+  pricePerUnit    Float
   createdAt       DateTime       @default(now())
   updatedAt       DateTime       @updatedAt
   unitOfMesaureId Int?

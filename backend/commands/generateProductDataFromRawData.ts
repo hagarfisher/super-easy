@@ -1,8 +1,15 @@
 import bluebird from "bluebird";
 import { PrismaClient } from "@prisma/client";
 import { SupplierProduct } from "../types/product";
+import { isBuffer } from "util";
 
 const prisma = new PrismaClient();
+
+enum WeightConversion {
+    kg = 1000,
+    oz = 28.349523125,
+    liter = 1000,
+}
 
 export async function generateProductData() {
     const products = await prisma.rawData.findMany({
@@ -18,6 +25,38 @@ export async function generateProductData() {
                 name: parsedProduct.unitOfMeasure?.names[2] ?? 'unknown',
             },
         });
+        const weight = parsedProduct.weight ?? 1;
+        const numberOfItems = parsedProduct.numberOfItems ?? 1;
+        const weightUnit = createdUnitOfMeasure.name;
+        const totalWeight = weight * numberOfItems;
+        let convertedWeight;
+        let pricePerUnit;
+        let lowestPrice;
+        if (parsedProduct.branch.salePrice) {
+            lowestPrice = parsedProduct.branch.salePrice;
+        }
+        else {
+            lowestPrice = parsedProduct.branch.regularPrice;
+        }
+
+        if (weightUnit === 'Kilogram' || weightUnit === 'Liter') {
+            convertedWeight = totalWeight * WeightConversion.kg;
+        }
+        else if (weightUnit === 'Oz' || weightUnit === 'fl oz') {
+            convertedWeight = totalWeight * WeightConversion.oz;
+        }
+
+        if (convertedWeight) {
+            pricePerUnit = lowestPrice / convertedWeight;
+        }
+        else if (weightUnit === 'unknown') {
+            pricePerUnit = lowestPrice;
+        }
+        else {
+            pricePerUnit = lowestPrice / totalWeight;
+        }
+
+
         await prisma.product.create({
             data: {
                 productId: parsedProduct.id,
@@ -27,6 +66,7 @@ export async function generateProductData() {
                 salePrice: parsedProduct.branch.salePrice,
                 isWeighable: parsedProduct.isWeighable,
                 unitOfMesaureId: createdUnitOfMeasure.id,
+                pricePerUnit,
             },
         });
     }).catch((error) => {

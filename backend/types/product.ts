@@ -372,7 +372,7 @@ export interface SupplierProduct {
             "long": string
         }
     },
-    "numberOfItems": number,
+    "numberOfItems"?: number,
     "promotionBanners": [
         {
             "id": number,
