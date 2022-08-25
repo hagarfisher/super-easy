@@ -36,7 +36,8 @@ export default {
             console.error(error);
         }
     },
-    createEmptyCart: async function createEmptyCart(_req: Request, res: Response) {
+    createEmptyCart: async function createEmptyCart(req: any, res: Response) {
+        console.log(req.auth);
         const url = "https://www.primadonaonline.co.il/v2/retailers/1286/branches/1711/carts";
         const body = { "lines": [] }
         try {
