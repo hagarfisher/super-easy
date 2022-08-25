@@ -1,3 +1,4 @@
+import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
 import React, { useState } from "react";
 import { Form, Badge, ListGroup, Col, Row, FormControl, Button, InputGroup } from 'react-bootstrap';
@@ -11,14 +12,22 @@ export default function ShoppingListInput() {
   const [products, setProducts] = useState([]);
   const [productName, setProductName] = useState("");
   const [productQuantity, setQuantity] = useState(0);
+  const { getAccessTokenSilently } = useAuth0();
 
   async function addProduct() {
     setProducts([...products, { name: productName, quantity: productQuantity }]);
   }
-  function addToCart() {
+  async function addToCart() {
+    const accessToken = await getAccessTokenSilently({
+      audience: 'http://localhost:8080',
+      scope: "read:current_user",
+    });
     const cartId = localStorage.getItem("cartId");
-    axios.post("http://localhost:8080/cart/add", { cartId, products });
-
+    await axios.post("http://localhost:8080/cart/add", { cartId, products }, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
   }
   return (
     <div>
@@ -48,14 +57,14 @@ export default function ShoppingListInput() {
         </Col>
       </Row>
       <ListGroup variant="flush" >
-        {products.map((prodcut, index) => (
-          <ListGroup.Item as="li" className="d-flex justify-content-between align-items-start">
+        {products.map((product, index) => (
+          <ListGroup.Item key={product.name} as="li" className="d-flex justify-content-between align-items-start">
             <div className="ms-2 me-auto">
               <Badge bg="primary" pill>
-              {prodcut.quantity}
+                {product.quantity}
               </Badge>
             </div>
-            {prodcut.name}
+            {product.name}
           </ListGroup.Item>
         ))}
       </ListGroup>
