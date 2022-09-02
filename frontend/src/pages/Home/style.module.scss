@@ -1,0 +1,20 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    padding-left: 5%;
+    padding-right: 5%;
+    .login-button {
+        width: 300px;
+        align-self: center;
+        margin-top: 5vh;
+    }
+    .carrots {
+        background-image: url("https://i.ibb.co/RYKP2Gh/carrotbg.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 89vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
