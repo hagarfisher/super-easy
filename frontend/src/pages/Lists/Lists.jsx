@@ -1,9 +1,9 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import axios from 'axios';
 import React, { useState } from 'react';
-import { Badge, Button, Col, FormControl, InputGroup, ListGroup, Nav, Row } from 'react-bootstrap';
+import { Badge, Button, Col, FormControl, InputGroup, ListGroup, Nav, Row, Modal } from 'react-bootstrap';
 import { fetchLists } from '../../services/list';
-import { FaPlus, FaTrash, FaClipboardList, FaAngleUp, FaAngleDown } from 'react-icons/fa';
+import { FaPlus, FaTrash, FaClipboardList, FaAngleUp, FaAngleDown, FaWindowRestore } from 'react-icons/fa';
 
 import styles from './style.module.scss';
 
@@ -62,7 +62,13 @@ export default function Lists() {
                 Authorization: `Bearer ${accessToken}`,
             },
         });
+        window.open("https://www.primadonaonline.co.il/", "_blank");
     }
+
+        const [show, setShow] = useState(false);
+      
+        const handleClose = () => setShow(false);
+        const handleShow = () => setShow(true);
 
     return (
         <div className={styles['lists-wrapper']}>
@@ -110,17 +116,18 @@ export default function Lists() {
                 <ListGroup className={styles['product-list']} variant="flush" >
                     {products.map((product, index) => (
                         <ListGroup.Item className={styles['list-item']} key={product.name} as="li" >
-
-                            <div>{product.name}</div>
-                            <div className={styles['quantity-control']}>
-                                <div className="ms-2 me-auto">
-                                    <Badge bg="primary" pill>
-                                        {product.quantity}
-                                    </Badge>
-                                </div>
-                                <div className={styles['updown-buttons']}>
-                                    <button className={styles.buttons} onClick={() => increaseQuantity(index)}><FaAngleUp /></button>
-                                    <button className={styles.buttons} onClick={() => decreaseQuantity(index)}><FaAngleDown /></button>
+                            <div className={styles['product-details']}>
+                                <span className={styles['product-name']}>{product.name}</span>
+                                <div className={styles['quantity-control']}>
+                                    <div className="ms-2 me-auto">
+                                        <Badge bg="primary" pill>
+                                            {product.quantity}
+                                        </Badge>
+                                    </div>
+                                    <div className={styles['updown-buttons']}>
+                                        <button className={styles.buttons} onClick={() => increaseQuantity(index)}><FaAngleUp /></button>
+                                        <button className={styles.buttons} onClick={() => decreaseQuantity(index)}><FaAngleDown /></button>
+                                    </div>
                                 </div>
                             </div>
                             <Button onClick={() => deleteProduct(index)} className={styles['trash-button']}><FaTrash color="#000" /></Button>
@@ -128,10 +135,25 @@ export default function Lists() {
                     ))}
                 </ListGroup>
                 <div className={styles['submit-buttons']}>
-                    <Button className="w-40" onClick={() => addToCart()}>Add to cart</Button>
+                    <Button className="w-40" onClick={handleShow}>Add to cart</Button>
                     <Button className="w-40" onClick={() => { }}>Add to My Lists</Button>
                 </div>
             </div>
+
+            <Modal show={show} onHide={handleClose}>
+                {/* <Modal.Header closeButton>
+                    <Modal.Title>Modal heading</Modal.Title>
+                </Modal.Header> */}
+                <Modal.Body>You will now be redirected to the supermarket's website...</Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                        Close
+                    </Button>
+                    <Button variant="primary" onClick={addToCart}>
+                        I'm finished shopping
+                    </Button>
+                </Modal.Footer>
+            </Modal>
         </div >
     )
 }

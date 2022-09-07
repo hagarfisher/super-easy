@@ -78,6 +78,18 @@
         margin-top: 20px;
     }
 
+    .product-details {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 30vw;
+    }
+    .product-name {
+        word-break: break-all;
+        max-width: 20vw;
+    }
+
     .quantity-control {
         display: flex;
         direction: row;
