@@ -548,3 +548,8 @@ export interface SupplierProduct {
         "salePrice"?: number | null,
     }
 }
+
+export interface Product {
+    name: string;
+    quantity: number;
+}

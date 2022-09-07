@@ -34,3 +34,12 @@ model RawData {
   id    Int  @id @default(autoincrement())
   value Json
 }
+
+model List {
+  id        Int      @id @default(autoincrement())
+  email     String   
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  Products  Json
+}
