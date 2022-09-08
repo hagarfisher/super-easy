@@ -31,6 +31,14 @@ export default {
             console.error(error);
         }
     },
+    searchProduct: async function searchProduct(req: any, res: Response) {
+        console.log("hiiiiiiiiii");
+        const { product } = req.body;
+        console.log(product);
+        const lowestPriceProduct = await getLowestPricedProduct(product);
+            let quantity = product.quantity;
+            res.status(200).json(lowestPriceProduct);
+    },
     createEmptyCart: async function createEmptyCart(req: any, res: Response) {
         console.log(req.auth);
         const url = "https://www.primadonaonline.co.il/v2/retailers/1286/branches/1711/carts";
@@ -44,8 +52,6 @@ export default {
         } catch (error) {
             console.error(error);
         }
-
-
     }
 }
 
@@ -67,3 +73,4 @@ async function getLowestPricedProduct(product: Product) {
     console.log(products);
     return products;
 }
+

@@ -35,6 +35,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/createEmptyCart", cart.createEmptyCart);
 app.post("/list/create", list.createList);
+app.post("/cart/searchProduct", cart.searchProduct); 
 app.post("/cart/add", cart.addToCart);
 
 
