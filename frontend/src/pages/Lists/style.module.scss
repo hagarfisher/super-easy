@@ -10,6 +10,11 @@
     padding-left: 6%;
     padding-right: 6%;
 
+    .main-button {
+        background-color: #635dff !important;
+        border-color: #635dff;
+        border-radius: 30px;
+    }
 
     .list-title {
         font-size: 1.5rem;
@@ -85,6 +90,7 @@
         justify-content: space-between;
         width: 30vw;
     }
+
     .product-name {
         word-break: break-all;
         max-width: 20vw;

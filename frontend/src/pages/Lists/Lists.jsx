@@ -13,6 +13,7 @@ export default function Lists() {
     const [products, setProducts] = useState([]);
     const [productName, setProductName] = useState("");
     const [productQuantity, setQuantity] = useState(0);
+    const [listName, setListName] = useState("");
     const { getAccessTokenSilently } = useAuth0();
 
 
@@ -27,11 +28,31 @@ export default function Lists() {
         fetchData();
     }, [])
 
-    function addProduct() {
-        if (productName.length > 0 && products.find(product => product.name === productName) === undefined) {
-            setProducts([...products, { name: productName, quantity: productQuantity }]);
+    async function addProduct() {
+        // FIXME: this doesn't work!! fix!        
+        const product = products.find(product => product.name === productName);
+        if (productName.length > 0 && product === undefined) {
+            const accessToken = await getAccessTokenSilently({
+                audience: 'http://localhost:8080',
+                scope: "read:current_user", 
+            });
+            console.log(accessToken);
+            const foundProduct = await axios.post("http://localhost:8080/cart/searchProduct", { product }, {
+                headers: {
+                    Authorization: `Bearer ${accessToken}`,
+                },
+            });
+            if (foundProduct.data !== null) {
+                setProducts([...products, { name: productName, quantity: productQuantity }]);
+                // setProductName("");
+                // setQuantity(0);
+            }
+            else {
+                alert("Product not found");
+            }
         }
     }
+
 
     function deleteProduct(productIndex) {
         const newProducts = [...products];
@@ -65,22 +86,26 @@ export default function Lists() {
         window.open("https://www.primadonaonline.co.il/", "_blank");
     }
 
-    async function createList() {
+    async function createList(name) {
         const accessToken = await getAccessTokenSilently({
             audience: 'http://localhost:8080',
             scope: "read:current_user",
         });
-        await axios.post("http://localhost:8080/list/create", { products }, {
+        await axios.post("http://localhost:8080/list/create", { name, products }, {
             headers: {
                 Authorization: `Bearer ${accessToken}`,
             },
         });
+        setShowListNameModal(false);
     }
 
-        const [show, setShow] = useState(false);
-      
-        const handleClose = () => setShow(false);
-        const handleShow = () => setShow(true);
+    const [showListNameModal, setShowListNameModal] = useState(false);
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+    const handleCloseListModal = () => setShowListNameModal(false);
+    const handleShowListModal = () => setShowListNameModal(true);
 
     return (
         <div className={styles['lists-wrapper']}>
@@ -122,7 +147,7 @@ export default function Lists() {
                         </InputGroup>
                     </Col>
                     <Col>
-                        <Button onClick={() => addProduct()} id="addProduct"><FaPlus /></Button>
+                        <Button className={styles['main-button']} onClick={() => addProduct()} id="addProduct"><FaPlus /></Button>
                     </Col>
                 </Row>
                 <ListGroup className={styles['product-list']} variant="flush" >
@@ -132,7 +157,7 @@ export default function Lists() {
                                 <span className={styles['product-name']}>{product.name}</span>
                                 <div className={styles['quantity-control']}>
                                     <div className="ms-2 me-auto">
-                                        <Badge bg="primary" pill>
+                                        <Badge className={styles['main-button']} bg="primary" pill>
                                             {product.quantity}
                                         </Badge>
                                     </div>
@@ -147,10 +172,32 @@ export default function Lists() {
                     ))}
                 </ListGroup>
                 <div className={styles['submit-buttons']}>
-                    <Button className="w-40" onClick={handleShow}>Add to cart</Button>
-                    <Button className="w-40" onClick={createList}>Add to My Lists</Button>
+                    <Button className={styles['main-button']} onClick={handleShow}>Add to cart</Button>
+                    <Button className={styles['main-button']} onClick={handleShowListModal}>Add to My Lists</Button>
                 </div>
             </div>
+
+            <Modal show={showListNameModal} centered onHide={handleCloseListModal}>
+                {/* <Modal.Header closeButton></Modal.Header> */}
+                <Modal.Body>
+                    Enter list name
+                    <InputGroup onChange={(e) => setListName(e.target.value)} id="listName" className="mb-3">
+                        <FormControl
+                            placeholder="List name"
+                            aria-label="Enter list name"
+                            aria-describedby="Enter list name"
+                        />
+                    </InputGroup>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleCloseListModal}>
+                        Close
+                    </Button>
+                    <Button variant="primary" onClick={() => createList(listName)}>
+                        Done
+                    </Button>
+                </Modal.Footer>
+            </Modal>
 
             <Modal show={show} centered onHide={handleClose}>
                 {/* <Modal.Header closeButton></Modal.Header> */}

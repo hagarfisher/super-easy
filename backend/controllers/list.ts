@@ -6,17 +6,20 @@ import { Product, SupplierProduct } from "../types/product";
 export default {
     // @ts-ignore
     createList: async function createList(req, res) {
-        // get email from auth0
-        console.log(req.auth.email);
         const email = req.auth.email;
         const { products, name } = req.body;
-
-        const list = await prisma.list.create({
+        
+        try{
+            const list = await prisma.list.create({
             data: {
-                email: email,
-                name: "test",
+                email,
+                name,
                 products,
             }
-        });
+        }); 
+        res.status(200).json(list);
+    } catch (error) {
+        res.status(500).json(error);
+    }
     }
 }
