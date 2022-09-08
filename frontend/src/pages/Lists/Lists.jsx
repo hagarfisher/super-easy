@@ -65,6 +65,18 @@ export default function Lists() {
         window.open("https://www.primadonaonline.co.il/", "_blank");
     }
 
+    async function createList() {
+        const accessToken = await getAccessTokenSilently({
+            audience: 'http://localhost:8080',
+            scope: "read:current_user",
+        });
+        await axios.post("http://localhost:8080/list/create", { products }, {
+            headers: {
+                Authorization: `Bearer ${accessToken}`,
+            },
+        });
+    }
+
         const [show, setShow] = useState(false);
       
         const handleClose = () => setShow(false);
@@ -136,14 +148,12 @@ export default function Lists() {
                 </ListGroup>
                 <div className={styles['submit-buttons']}>
                     <Button className="w-40" onClick={handleShow}>Add to cart</Button>
-                    <Button className="w-40" onClick={() => { }}>Add to My Lists</Button>
+                    <Button className="w-40" onClick={createList}>Add to My Lists</Button>
                 </div>
             </div>
 
-            <Modal show={show} onHide={handleClose}>
-                {/* <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
-                </Modal.Header> */}
+            <Modal show={show} centered onHide={handleClose}>
+                {/* <Modal.Header closeButton></Modal.Header> */}
                 <Modal.Body>You will now be redirected to the supermarket's website...</Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>

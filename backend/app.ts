@@ -6,9 +6,11 @@ import jwks, { GetVerificationKey } from 'jwks-rsa';
 import cart from "./controllers/cart";
 import list from "./controllers/list";
 import { SupplierProduct } from './types/product';
+import { PrismaClient } from '@prisma/client';
 
 const router = express.Router();
 const app = express();
+export const prisma = new PrismaClient();
 
 const corsOptions = {
     origin: "http://localhost:3000"
@@ -32,8 +34,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/createEmptyCart", cart.createEmptyCart);
-app.post("/list", list.createList);
+app.post("/list/create", list.createList);
 app.post("/cart/add", cart.addToCart);
+
 
 const PORT = 8080;
 app.listen(PORT, () => {
@@ -48,9 +51,3 @@ function getProductDetails(item: SupplierProduct) {
     };
     return product
 }
-// TODO
-// post /login
-// post /logout
-// post /signup
-// post /list - send shopping list
-// get /lists

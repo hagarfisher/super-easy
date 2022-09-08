@@ -2,11 +2,11 @@ const data = require("../mockData.json");
 import axios from 'axios';
 import { Request, Response } from 'express';
 import { SupplierProduct, Product } from '../types/product';
-import { PrismaClient } from '@prisma/client';
+// import { PrismaClient } from '@prisma/client';
 import bluebird from 'bluebird';
+import {prisma} from '../app';
 
-
-const prisma = new PrismaClient();
+// const prisma = new PrismaClient();
 
 export default {
     addToCart: async function addToCart(req: Request<void, void, { cartId: string; products: Product[] }>, res: Response) {
