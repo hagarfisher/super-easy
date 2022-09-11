@@ -7,6 +7,7 @@ import cart from "./controllers/cart";
 import list from "./controllers/list";
 import { SupplierProduct } from './types/product';
 import { PrismaClient } from '@prisma/client';
+import { RequestWithAuth } from "./types/request";
 
 const router = express.Router();
 const app = express();
@@ -22,10 +23,10 @@ const jwtCheck = jwt({
         rateLimit: true,
         jwksRequestsPerMinute: 5,
         jwksUri: 'https://dev-5zxzugi9.us.auth0.com/.well-known/jwks.json'
-  }) as GetVerificationKey,
-  audience: 'http://localhost:8080',
-  issuer: 'https://dev-5zxzugi9.us.auth0.com/',
-  algorithms: ['RS256']
+    }) as GetVerificationKey,
+    audience: 'http://localhost:8080',
+    issuer: 'https://dev-5zxzugi9.us.auth0.com/',
+    algorithms: ['RS256']
 });
 
 app.use(cors(corsOptions));
@@ -33,10 +34,11 @@ app.use(jwtCheck);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get("/createEmptyCart", cart.createEmptyCart);
-app.post("/list/create", list.createList);
-app.post("/cart/searchProduct", cart.searchProduct); 
-app.post("/cart/add", cart.addToCart);
+app.get("/createEmptyCart", (req, res) => cart.createEmptyCart(req as RequestWithAuth, res));
+app.post("/list/create", (req, res) => list.createList(req as RequestWithAuth, res));
+app.get("/lists",(req, res) => list.fetchLists(req as RequestWithAuth, res))
+app.get("/cart/searchProduct", (req, res) => cart.searchProduct(req as RequestWithAuth, res));
+app.post("/cart/add", (req, res) => cart.addToCart(req as RequestWithAuth, res));
 
 
 const PORT = 8080;

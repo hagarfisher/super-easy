@@ -1,9 +1,9 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import axios from 'axios';
 import React, { useState } from 'react';
-import { Badge, Button, Col, FormControl, InputGroup, ListGroup, Nav, Row, Modal } from 'react-bootstrap';
+import { Badge, Button, Col, FormControl, InputGroup, ListGroup, Nav, Row, Modal, OverlayTrigger, Tooltip, Accordion } from 'react-bootstrap';
 import { fetchLists } from '../../services/list';
-import { FaPlus, FaTrash, FaClipboardList, FaAngleUp, FaAngleDown, FaWindowRestore } from 'react-icons/fa';
+import { FaPlus, FaTrash, FaClipboardList, FaAngleUp, FaAngleDown, FaWindowRestore, FaExclamationTriangle } from 'react-icons/fa';
 
 import styles from './style.module.scss';
 
@@ -20,36 +20,44 @@ export default function Lists() {
     React.useEffect(() => {
         const fetchData = async () => {
             setIsLoading(true);
-            const lists = await fetchLists();
+            const accessToken = await getAccessTokenSilently({
+                audience: 'http://localhost:8080',
+                scope: "read:current_user",
+            });
+
+            const response = await fetchLists(accessToken);
+            const lists = response.data;
+            console.log(lists);
             setLists(lists);
             setIsLoading(false);
         }
 
         fetchData();
-    }, [])
+    }, [getAccessTokenSilently]);
 
     async function addProduct() {
-        // FIXME: this doesn't work!! fix!        
-        const product = products.find(product => product.name === productName);
-        if (productName.length > 0 && product === undefined) {
+        console.log(productName);
+        if (productName.length > 0) {
             const accessToken = await getAccessTokenSilently({
                 audience: 'http://localhost:8080',
-                scope: "read:current_user", 
+                scope: "read:current_user",
             });
-            console.log(accessToken);
-            const foundProduct = await axios.post("http://localhost:8080/cart/searchProduct", { product }, {
+            const product = { name: productName, quantity: productQuantity };
+            const foundProduct = await axios.get("http://localhost:8080/cart/searchProduct", {
                 headers: {
                     Authorization: `Bearer ${accessToken}`,
                 },
+                params: product,
             });
-            if (foundProduct.data !== null) {
-                setProducts([...products, { name: productName, quantity: productQuantity }]);
-                // setProductName("");
-                // setQuantity(0);
+            if (!products.find(product => product.name === productName)) {
+                let found = true;
+                if (foundProduct.data !== null) {
+                    found = false;
+                }
+                const productObject = { name: productName, quantity: productQuantity, found }
+                setProducts([...products, productObject]);
             }
-            else {
-                alert("Product not found");
-            }
+
         }
     }
 
@@ -91,11 +99,13 @@ export default function Lists() {
             audience: 'http://localhost:8080',
             scope: "read:current_user",
         });
-        await axios.post("http://localhost:8080/list/create", { name, products }, {
+        const response = await axios.post("http://localhost:8080/list/create", { name, products }, {
             headers: {
                 Authorization: `Bearer ${accessToken}`,
             },
         });
+        const newList = response.data;
+        setLists([...lists, newList]);
         setShowListNameModal(false);
     }
 
@@ -114,13 +124,37 @@ export default function Lists() {
                     <FaClipboardList />
                     <span>Lists</span>
                 </div>
-
-                <Nav defaultActiveKey="/home" className="flex-column">
-                    {lists.map(list => (
-                        <Nav.Link key={list.id} href={`/lists/${list.id}`}>
-                            {list.name}
-                        </Nav.Link>))}
-                </Nav>
+                <Accordion className={styles['my-lists-wrapper']} defaultActiveKey="0" flush>
+                    {lists.map((list, index) => (
+                        <Accordion.Item className={styles['accordion-item-wrapper']} eventKey={index}>
+                            <Accordion.Header>
+                                <div className={styles['list-name']}>
+                                    <span>{list.name}</span>
+                                </div>
+                                <div className={styles['list-actions']}>
+                                    <Button className={styles['list-action-buttons']} onClick={() => { }}><span style={{display: "flex", justifyContent: "center"}}><FaTrash size={14}/></span></Button>
+                                    <Button className={styles['list-action-buttons']} onClick={() => { }}><span style={{display: "flex", justifyContent: "center"}}><FaPlus size={14}/></span></Button>
+                                </div>
+                            </Accordion.Header>
+                            <Accordion.Body>
+                                <ListGroup>
+                                    {list.products.map((product, index) => (
+                                        <ListGroup.Item key={index}>
+                                            <Row>
+                                                <Col xs={8}>
+                                                    <span>{product.name}</span>
+                                                </Col>
+                                                <Col xs={4}>
+                                                    <span>{product.quantity}</span>
+                                                </Col>
+                                            </Row>
+                                        </ListGroup.Item>
+                                    ))}
+                                </ListGroup>
+                            </Accordion.Body>
+                        </Accordion.Item>
+                    ))}
+                </Accordion>
             </div>
 
             <div className="searchProducts">
@@ -152,23 +186,36 @@ export default function Lists() {
                 </Row>
                 <ListGroup className={styles['product-list']} variant="flush" >
                     {products.map((product, index) => (
-                        <ListGroup.Item className={styles['list-item']} key={product.name} as="li" >
-                            <div className={styles['product-details']}>
-                                <span className={styles['product-name']}>{product.name}</span>
-                                <div className={styles['quantity-control']}>
-                                    <div className="ms-2 me-auto">
-                                        <Badge className={styles['main-button']} bg="primary" pill>
-                                            {product.quantity}
-                                        </Badge>
-                                    </div>
-                                    <div className={styles['updown-buttons']}>
-                                        <button className={styles.buttons} onClick={() => increaseQuantity(index)}><FaAngleUp /></button>
-                                        <button className={styles.buttons} onClick={() => decreaseQuantity(index)}><FaAngleDown /></button>
+                        <div className={styles['product-container']}>
+                            <ListGroup.Item className={styles['list-item']} key={product.name} as="li" >
+                                <div className={styles['product-details']}>
+                                    <span className={styles['product-name']}>{product.name}</span>
+                                    <div className={styles['quantity-control']}>
+                                        <div className="ms-2 me-auto">
+                                            <Badge className={styles['main-button']} bg="primary" pill>
+                                                {product.quantity}
+                                            </Badge>
+                                        </div>
+                                        <div className={styles['updown-buttons']}>
+                                            <button className={styles.buttons} onClick={() => increaseQuantity(index)}><FaAngleUp /></button>
+                                            <button className={styles.buttons} onClick={() => decreaseQuantity(index)}><FaAngleDown /></button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <Button onClick={() => deleteProduct(index)} className={styles['trash-button']}><FaTrash color="#000" /></Button>
-                        </ListGroup.Item>
+                                <Button onClick={() => deleteProduct(index)} className={styles['trash-button']}><FaTrash color="#000" /></Button>
+                            </ListGroup.Item>
+                            {!product.found ? <></> : <OverlayTrigger
+                                key='top'
+                                placement='top'
+                                overlay={
+                                    <Tooltip id='tooltip-top'>
+                                        couldn't find product
+                                    </Tooltip>
+                                }
+                            >
+                                <span><FaExclamationTriangle /></span>
+                            </OverlayTrigger>}
+                        </div>
                     ))}
                 </ListGroup>
                 <div className={styles['submit-buttons']}>

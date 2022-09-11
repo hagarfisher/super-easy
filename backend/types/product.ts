@@ -552,4 +552,5 @@ export interface SupplierProduct {
 export interface Product {
     name: string;
     quantity: number;
+    found: boolean;
 }

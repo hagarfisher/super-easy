@@ -4,7 +4,7 @@
     "outDir": "dist",
     "strict": true,
     "lib": ["esnext"],
-    "esModuleInterop": true
-  },
-  "files": ["./@types/custom.d.ts"],
+    "esModuleInterop": true,
+    "typeRoots": ["node_modules/@types"]
+  }
 }
