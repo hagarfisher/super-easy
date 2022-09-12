@@ -1,10 +1,10 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import axios from 'axios';
 import React, { useState } from 'react';
-import { Badge, Button, Col, FormControl, InputGroup, ListGroup, Nav, Row, Modal, OverlayTrigger, Tooltip, Accordion } from 'react-bootstrap';
+import { Badge, Spinner, Button, Col, FormControl, InputGroup, ListGroup, Nav, Row, Modal, OverlayTrigger, Tooltip, Accordion } from 'react-bootstrap';
 import { fetchLists } from '../../services/list';
-import { FaPlus, FaTrash, FaClipboardList, FaAngleUp, FaAngleDown, FaWindowRestore, FaExclamationTriangle } from 'react-icons/fa';
-
+import { FaPlus, FaTrash, FaClipboardList, FaAngleUp, FaAngleDown, FaExclamationTriangle } from 'react-icons/fa';
+import './accordion.css';
 import styles from './style.module.scss';
 
 export default function Lists() {
@@ -80,6 +80,36 @@ export default function Lists() {
         setProducts(newProducts);
     }
 
+    function addListToCart(index) {
+        const list = lists[index];
+        const listProducts = list.products;
+        const newProducts = [...products];
+        listProducts.forEach(product => {
+            if (!newProducts.find(p => p.name === product.name)) {
+                newProducts.push(product);
+            }
+        });
+
+        setProducts(newProducts);
+    }
+
+    async function deleteList(index) {
+        const list = lists[index];
+        console.log(list);
+        const accessToken = await getAccessTokenSilently({
+            audience: 'http://localhost:8080',
+            scope: "read:current_user",
+        });
+        await axios.delete(`http://localhost:8080/list/${list.id}`, {
+            headers: {
+                Authorization: `Bearer ${accessToken}`,
+            },
+        });
+        const newLists = [...lists];
+        newLists.splice(index, 1);
+        setLists(newLists);
+    }
+
     async function addToCart() {
         const accessToken = await getAccessTokenSilently({
             audience: 'http://localhost:8080',
@@ -124,37 +154,43 @@ export default function Lists() {
                     <FaClipboardList />
                     <span>Lists</span>
                 </div>
-                <Accordion className={styles['my-lists-wrapper']} defaultActiveKey="0" flush>
-                    {lists.map((list, index) => (
-                        <Accordion.Item className={styles['accordion-item-wrapper']} eventKey={index}>
-                            <Accordion.Header>
-                                <div className={styles['list-name']}>
-                                    <span>{list.name}</span>
-                                </div>
-                                <div className={styles['list-actions']}>
-                                    <Button className={styles['list-action-buttons']} onClick={() => { }}><span style={{display: "flex", justifyContent: "center"}}><FaTrash size={14}/></span></Button>
-                                    <Button className={styles['list-action-buttons']} onClick={() => { }}><span style={{display: "flex", justifyContent: "center"}}><FaPlus size={14}/></span></Button>
-                                </div>
-                            </Accordion.Header>
-                            <Accordion.Body>
-                                <ListGroup>
-                                    {list.products.map((product, index) => (
-                                        <ListGroup.Item key={index}>
-                                            <Row>
-                                                <Col xs={8}>
-                                                    <span>{product.name}</span>
-                                                </Col>
-                                                <Col xs={4}>
-                                                    <span>{product.quantity}</span>
-                                                </Col>
-                                            </Row>
-                                        </ListGroup.Item>
-                                    ))}
-                                </ListGroup>
-                            </Accordion.Body>
-                        </Accordion.Item>
-                    ))}
-                </Accordion>
+                {isLoading ? <span style={{ display: "flex", justifyContent: "center", color:"#635dff", marginTop:"10vh" }}><Spinner animation="border" /></span> : (
+
+                    <Accordion className={styles['my-lists-wrapper']} defaultActiveKey="0" flush>
+                        {lists.map((list, index) => (
+                            <Accordion.Item eventKey={index}>
+                                <Accordion.Header>
+                                    <div className={styles['list-name']}>
+                                        <span>{list.name}</span>
+                                    </div>
+                                </Accordion.Header>
+                                <Accordion.Body>
+                                    <ListGroup>
+                                        {list.products.map((product, index) => (
+                                            <ListGroup.Item key={index}>
+                                                <Row>
+                                                    <Col xs={8}>
+                                                        <span>{product.name}</span>
+                                                    </Col>
+                                                    <Col xs={4}>
+                                                        <span>{product.quantity}</span>
+                                                        {/* <Badge className={styles['main-button']} bg="primary" pill>
+                                                            {product.quantity}
+                                                        </Badge> */}
+                                                    </Col>
+                                                </Row>
+                                            </ListGroup.Item>
+                                        ))}
+                                    </ListGroup>
+                                    <div className={styles['list-actions']}>
+                                        <Button className={styles['list-action-buttons']} onClick={() => { deleteList(index) }}><span style={{ display: "flex", justifyContent: "center" }}><FaTrash size={14} /></span></Button>
+                                        <Button className={styles['list-action-buttons']} onClick={() => { addListToCart(index) }}><span style={{ display: "flex", justifyContent: "center" }}><FaPlus size={14} /></span></Button>
+                                    </div>
+                                </Accordion.Body>
+                            </Accordion.Item>
+                        ))}
+                    </Accordion>
+                )}
             </div>
 
             <div className="searchProducts">
@@ -190,19 +226,21 @@ export default function Lists() {
                             <ListGroup.Item className={styles['list-item']} key={product.name} as="li" >
                                 <div className={styles['product-details']}>
                                     <span className={styles['product-name']}>{product.name}</span>
-                                    <div className={styles['quantity-control']}>
-                                        <div className="ms-2 me-auto">
-                                            <Badge className={styles['main-button']} bg="primary" pill>
-                                                {product.quantity}
-                                            </Badge>
+                                    <div className={styles['product-controls']}>
+                                        <div className={styles['quantity-control']}>
+                                            <div className="ms-2 me-auto">
+                                                <Badge className={styles['main-button']} bg="primary" pill>
+                                                    {product.quantity}
+                                                </Badge>
+                                            </div>
+                                            <div className={styles['updown-buttons']}>
+                                                <button className={styles.buttons} onClick={() => increaseQuantity(index)}><FaAngleUp /></button>
+                                                <button className={styles.buttons} onClick={() => decreaseQuantity(index)}><FaAngleDown /></button>
+                                            </div>
                                         </div>
-                                        <div className={styles['updown-buttons']}>
-                                            <button className={styles.buttons} onClick={() => increaseQuantity(index)}><FaAngleUp /></button>
-                                            <button className={styles.buttons} onClick={() => decreaseQuantity(index)}><FaAngleDown /></button>
-                                        </div>
+                                        <Button onClick={() => deleteProduct(index)} className={styles['list-action-buttons']}><span style={{ display: "flex", justifyContent: "center" }}><FaTrash size={16} /></span></Button>
                                     </div>
                                 </div>
-                                <Button onClick={() => deleteProduct(index)} className={styles['trash-button']}><FaTrash color="#000" /></Button>
                             </ListGroup.Item>
                             {!product.found ? <></> : <OverlayTrigger
                                 key='top'
@@ -225,7 +263,6 @@ export default function Lists() {
             </div>
 
             <Modal show={showListNameModal} centered onHide={handleCloseListModal}>
-                {/* <Modal.Header closeButton></Modal.Header> */}
                 <Modal.Body>
                     Enter list name
                     <InputGroup onChange={(e) => setListName(e.target.value)} id="listName" className="mb-3">
@@ -237,23 +274,22 @@ export default function Lists() {
                     </InputGroup>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={handleCloseListModal}>
+                    <Button className={styles['main-button']} variant="secondary" onClick={handleCloseListModal}>
                         Close
                     </Button>
-                    <Button variant="primary" onClick={() => createList(listName)}>
+                    <Button className={styles['main-button']} variant="primary" onClick={() => createList(listName)}>
                         Done
                     </Button>
                 </Modal.Footer>
             </Modal>
 
             <Modal show={show} centered onHide={handleClose}>
-                {/* <Modal.Header closeButton></Modal.Header> */}
                 <Modal.Body>You will now be redirected to the supermarket's website...</Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
+                    <Button className={styles['main-button']} variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button variant="primary" onClick={addToCart}>
+                    <Button className={styles['main-button']} variant="primary" onClick={addToCart}>
                         I'm finished shopping
                     </Button>
                 </Modal.Footer>

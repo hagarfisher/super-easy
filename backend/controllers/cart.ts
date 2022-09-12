@@ -33,9 +33,7 @@ export default {
         }
     },
     searchProduct: async function searchProduct(req: RequestWithAuth, res: Response) {
-        console.log(req);
         const product = req.query;
-        console.log(product);
         if(product){
         const lowestPriceProduct = await getLowestPricedProduct(product);
             let quantity = product.quantity;
@@ -43,7 +41,6 @@ export default {
         }
     },
     createEmptyCart: async function createEmptyCart(req: RequestWithAuth, res: Response) {
-        console.log(req.auth);
         const url = "https://www.primadonaonline.co.il/v2/retailers/1286/branches/1711/carts";
         const body = { "lines": [] }
         try {

@@ -37,6 +37,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get("/createEmptyCart", (req, res) => cart.createEmptyCart(req as RequestWithAuth, res));
 app.post("/list/create", (req, res) => list.createList(req as RequestWithAuth, res));
 app.get("/lists",(req, res) => list.fetchLists(req as RequestWithAuth, res))
+app.delete("/list/:id", (req, res) => list.deleteList(req as RequestWithAuth, res));
 app.get("/cart/searchProduct", (req, res) => cart.searchProduct(req as RequestWithAuth, res));
 app.post("/cart/add", (req, res) => cart.addToCart(req as RequestWithAuth, res));
 

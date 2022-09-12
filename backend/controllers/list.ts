@@ -32,5 +32,20 @@ export default {
         } catch (error) {
             res.status(500).json(error);
         }
+    },
+    deleteList: async function deleteList(req: RequestWithAuth, res: Response) {
+        const email = req.auth.email;
+        const { id } = req.params;
+        try {
+            const list = await prisma.list.delete({
+                where: {
+                    id: Number(id),
+                }
+            });
+            res.status(200).json(list);
+        }
+        catch (error) {
+            res.status(500).json(error);
+        }
     }
 }
