@@ -55,7 +55,7 @@ export default function Lists() {
                     found = false;
                 }
                 const productObject = { name: productName, quantity: productQuantity, found }
-                setProducts([...products, productObject]);
+                setProducts([productObject, ...products]);
             }
 
         }
@@ -154,7 +154,7 @@ export default function Lists() {
                     <FaClipboardList />
                     <span>Lists</span>
                 </div>
-                {isLoading ? <span style={{ display: "flex", justifyContent: "center", color:"#635dff", marginTop:"10vh" }}><Spinner animation="border" /></span> : (
+                {isLoading ? <span style={{ display: "flex", justifyContent: "center", color: "#635dff", marginTop: "10vh" }}><Spinner animation="border" /></span> : (
 
                     <Accordion className={styles['my-lists-wrapper']} defaultActiveKey="0" flush>
                         {lists.map((list, index) => (
