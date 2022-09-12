@@ -4,9 +4,12 @@
     padding-left: 5%;
     padding-right: 5%;
     .login-button {
-        width: 300px;
+        width: 250px;
         align-self: center;
         margin-top: 5vh;
+        background-color: #635dff !important;
+        border-color: #635dff !important;
+        border-radius: 30px;
     }
     .carrots {
         background-image: url("https://i.ibb.co/RYKP2Gh/carrotbg.jpg");

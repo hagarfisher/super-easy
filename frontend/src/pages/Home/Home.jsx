@@ -17,7 +17,7 @@ export default function Home({ createCart }) {
     return (
         <div className={styles.home}>
             {isAuthenticated ? <div className={styles.carrots}>
-                <Button onClick={(e) => handleClick()}>Start shopping</Button>
+                <Button className={styles['login-button']} onClick={(e) => handleClick()}>Start shopping</Button>
             </div>
                 :
                 <Button className={styles['login-button']} onClick={() => navigate("/login")}>Login</Button>
