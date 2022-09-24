@@ -1,7 +1,5 @@
 import axios from "axios";
 import { useState } from "react";
-import CartButton from "./components/CartButton";
-import ShoppingListInput from "./components/ShoppingListInput";
 import { extensionId } from "./utils/constants";
 
 import "./App.css";
@@ -18,7 +16,6 @@ import {
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import Logout from "./pages/Logout/Logout";
 import { Home } from "./pages/Home";
 import { Login } from "./pages/Login";
@@ -66,20 +63,10 @@ export default function App() {
     return <div style={{ width: '100vw', textAlign: 'center', marginTop: '5%' }}><Spinner animation="border" /></div>;
   }
   return (
-    // <div className="app">
-    //   {!isAuthenticated && <LoginButton />}
-    //   {isAuthenticated && <LogoutButton />}
-    //   {doesCartExist ? <ShoppingListInput /> : <CartButton createCart={createCart} />}
-    //   <button onClick={() => {
-    //     localStorage.clear();
-    //     window.location.reload();
-    //   }}>Clear local storage</button>
-    // </div>
     <>
       <Navbar bg="light" expand="lg">
         <Container>
           <Navbar.Brand href="/">
-            {/* SuperEasy */}
             <img
               src="https://supereasy.s3.us-east-2.amazonaws.com/superEasy+logo.png"
               width="70"
@@ -87,7 +74,7 @@ export default function App() {
               alt="supereasy logo"
             />
           </Navbar.Brand>
-          
+
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
@@ -101,9 +88,9 @@ export default function App() {
       <Router>
         <Routes className="app">
           <Route index path="/" element={
-            <Home createCart={createCart}/>
+            <Home createCart={createCart} />
           } />
-          <Route path="/lists" element={<Lists/>} />
+          <Route path="/lists" element={<Lists />} />
           <Route path="/logout" element={<Logout />} />
           <Route path="/login" element={<Login />} />
           <Route path="*" element={<div>Not found</div>} />

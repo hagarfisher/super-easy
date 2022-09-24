@@ -74,7 +74,6 @@ export async function generateProductData() {
     });
 }
 
-
 generateProductData()
     .then(async () => {
         console.log("done");

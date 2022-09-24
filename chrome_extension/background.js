@@ -1,9 +1,3 @@
-// chrome.action.onClicked.addListener((tab) => {
-//   chrome.scripting.executeScript({
-//     target: { tabId: tab.id },
-//     files: ['content-script.js']
-//   });
-// });
 chrome.runtime.onMessageExternal.addListener(
     function (request, sender, sendResponse) {
         if (request.cartId) {

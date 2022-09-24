@@ -2,12 +2,9 @@ const data = require("../mockData.json");
 import axios from 'axios';
 import { Response } from 'express';
 import { Product } from '../types/product';
-// import { PrismaClient } from '@prisma/client';
 import bluebird from 'bluebird';
 import { prisma } from '../app';
 import { RequestWithAuth } from '../types/request';
-
-// const prisma = new PrismaClient();
 
 export default {
     addToCart: async function addToCart(req: RequestWithAuth<void, void, { cartId: string; products: Product[] }>, res: Response) {
@@ -34,8 +31,8 @@ export default {
     },
     searchProduct: async function searchProduct(req: RequestWithAuth, res: Response) {
         const product = req.query;
-        if(product){
-        const lowestPriceProduct = await getLowestPricedProduct(product);
+        if (product) {
+            const lowestPriceProduct = await getLowestPricedProduct(product);
             let quantity = product.quantity;
             res.status(200).json(lowestPriceProduct);
         }
@@ -55,7 +52,7 @@ export default {
     }
 }
 
-async function getLowestPricedProduct(product:any) {
+async function getLowestPricedProduct(product: any) {
 
     const products = await prisma.product.findFirst({
         where: {

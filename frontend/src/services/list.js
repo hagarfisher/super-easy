@@ -7,8 +7,4 @@ export async function fetchLists(accessToken) {
         },
     });
     return lists;
-    // return Promise.resolve([
-    //     {name: 'List 1', id: 1},
-    //     {name: 'List 2', id: 2},
-    // ]);
 }

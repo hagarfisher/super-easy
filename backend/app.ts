@@ -46,12 +46,3 @@ const PORT = 8080;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}.`);
 });
-
-function getProductDetails(item: SupplierProduct) {
-    const product = {
-        id: item.productId,
-        name: item.localName,
-        price: item.branch.regularPrice
-    };
-    return product
-}
