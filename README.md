@@ -28,10 +28,10 @@
 <br />
 <div align="center">
   <a href="https://github.com/hagarfisher/superEasy">
-    <img src="https://supereasy.s3.us-east-2.amazonaws.com/superEasy+logo.png" alt="Logo" width="80" height="100%">
+    <img src="https://supereasy.s3.us-east-2.amazonaws.com/superEasy+logo.png" alt="Logo" width="120" height="100%">
   </a>
 
-<h3 align="center">Supereasy</h3>
+<!-- <h3 align="center">Supereasy</h3> -->
 
   <p align="center">
     We created a web app designed to help customers shop smarter at supermarkets by finding the cheapest cart available.
