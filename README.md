@@ -18,9 +18,10 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][contributors-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
 
+[![Contributors][contributors-shield]][contributors-url]
+[![Collaborator][collaborator-shield]][collaborator-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
 
 <!-- PROJECT LOGO -->
@@ -147,6 +148,8 @@ Project Link: [https://github.com/hagarfisher/superEasy](https://github.com/haga
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/hagarfisher/superEasy.svg?style=for-the-badge
 [contributors-url]: https://github.com/hagarfisher/superEasy/graphs/contributors
+[collaborator-shield]: https://img.shields.io/badge/Collaborator-Adi%20Monsa-blue?style=for-the-badge
+[collaborator-url]: https://github.com/adimonsa
 [forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
 [forks-url]: https://github.com/github_username/repo_name/network/members
 [stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
