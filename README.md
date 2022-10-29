@@ -34,7 +34,7 @@
 <!-- <h3 align="center">Supereasy</h3> -->
 
   <p align="center">
-    We created a web app designed to help customers shop smarter at supermarkets by finding the cheapest cart available.
+    We created a web app designed to help customers shop smarter at online supermarkets by finding the cheapest cart available.
     <br />
     <a href="https://github.com/hagarfisher/superEasy"><strong>Explore the docs »</strong></a>
     <br />
