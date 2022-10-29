@@ -88,11 +88,12 @@ To get a local copy up and running follow these simple example steps.
 
 ### Installation
 
-1. Load unpacked extension to chrome from superEasy/chrome_extension.
-2. Clone the repo
+1. Clone the repo
    ```sh
    git clone https://github.com/hagarfisher/superEasy.git
    ```
+2. Load unpacked extension to chrome from superEasy/chrome_extension.
+
 3. Install NPM packages
    ```sh
    npm install
