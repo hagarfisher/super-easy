@@ -69,7 +69,8 @@
 * [![React][React.js]][React-url]
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 * [![Typescript][Typescript]][Typescript-url]
-
+* [![Nodejs][Nodejs]][Nodejs-url]
+* [![Prisma][Prisma]][Prisma-url]
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
@@ -135,11 +136,17 @@ Project Link: [https://github.com/hagarfisher/superEasy](https://github.com/haga
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
+
+* Contributor - [Adi Monsa](https://github.com/adimonsa/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/adimonsa/superEasy.svg?style=for-the-badge
-[contributors-url]: https://github.com/adimonsa/superEasy/graphs/contributors
+[contributors-shield]: https://img.shields.io/github/contributors/hagarfisher/superEasy.svg?style=for-the-badge
+[contributors-url]: https://github.com/hagarfisher/superEasy/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
 [forks-url]: https://github.com/github_username/repo_name/network/members
 [stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
@@ -149,7 +156,7 @@ Project Link: [https://github.com/hagarfisher/superEasy](https://github.com/haga
 [license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
 [license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
+[linkedin-url]: https://www.linkedin.com/in/hagar-fisher-97b337107
 [product-screenshot]: images/screenshot.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
@@ -169,3 +176,7 @@ Project Link: [https://github.com/hagarfisher/superEasy](https://github.com/haga
 [JQuery-url]: https://jquery.com 
 [Typescript]: https://img.shields.io/badge/Typescript-000000?style=for-the-badge&logo=typescript&logoColor=007acc
 [Typescript-url]: https://www.typescriptlang.org
+[Prisma]: https://img.shields.io/badge/Prisma-gray?style=for-the-badge&logo=prisma&logoColor=navy
+[Prisma-url]: https://www.prisma.io
+[Nodejs]: https://img.shields.io/badge/Node.js-gray?style=for-the-badge&logo=node.js&logoColor=green
+[Nodejs-url]: https://nodejs.org/en/
