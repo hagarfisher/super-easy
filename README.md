@@ -104,7 +104,7 @@ To get a local copy up and running follow these simple example steps.
    ```
 5. Run Docker
    ```sh
-   Docker compose - d
+   docker compose up -d
    ```
 6. Start the react app from superEasy/frontend.
    ```sh
